@@ -1,0 +1,66 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Apply to all files
+[*]
+charset = utf-8                  # Use UTF-8 encoding
+indent_style = tab               # Use tabs for indentation
+indent_size = 2                  # Use 2 spaces per indentation level
+tab_width = 2                    # Use 2 columns per tab
+end_of_line = lf                 # Use Unix-style line endings (LF)
+trim_trailing_whitespace = true  # Remove trailing whitespace
+insert_final_newline = true      # Ensure files end with a newline
+max_line_length = 80             # Maximum line length
+
+# Specific configuration for JavaScript files
+[*.js]
+tab_width = 2                  # Use 2 spaces for JavaScript files
+
+# Specific configuration for JSON files
+[*.json]
+indent_size = 2                  # Use 2 spaces for JSON files
+
+# Specific configuration for YAML files
+[*.yaml]
+indent_style = space             # Use spaces for YAML files
+indent_size = 2                  # Use 2 spaces for YAML files
+
+# Specific configuration for TypeScript files
+[*.ts]
+indent_size = 2                  # Use 2 spaces for TypeScript files
+
+# Specific configuration for Shell scripts
+[*.sh]
+indent_size = 2                  # Use 2 spaces for Shell scripts
+
+# Indentation override for all JS under 'lib' or 'build'
+[{lib/**,build/**}]
+indent_style = space             # Use spaces for these files
+indent_size = 2                  # Use 2 spaces for these files
+
+# Specific configuration for CSS files
+[*.css]
+indent_size = 2                  # Use 2 spaces for CSS files
+
+# Specific configuration for SCSS files
+[*.scss]
+indent_size = 2                  # Use 2 spaces for SCSS files
+
+# Markdown files
+[*.md]
+indent_style = space             # Use spaces for Markdown files
+tab_width = 2                    # Use 2 spaces per tab
+trim_trailing_whitespace = false # Allow trailing whitespace in Markdown (for line breaks)
+
+# Specific configuration for plain text files
+[*.txt]
+indent_style = none              # No indentation for plain text files
+trim_trailing_whitespace = true  # Remove trailing whitespace
+insert_final_newline = true      # Ensure files end with a newline
+
+# Configuration files (e.g., .editorconfig, .eslintrc, .babelrc, .prettierrc)
+[{.*,.{json,js}}]
+indent_style = tab             # Use spaces for configuration files
+tab_width = 2                  # Use 2 spaces for configuration files
