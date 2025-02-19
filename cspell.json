@@ -1,28 +1,13 @@
 {
 	"version": "0.2",
-	"ignorePaths": [
-		"node_modules",
-		"dist",
-		"out",
-		"logs",
-		"e2e/playwright-report"
-	],
+	"ignorePaths": ["node_modules", "dist", "out", "logs", "e2e/playwright-report"],
 	"languageSettings": [
 		{
 			"languageId": "*",
 			"locale": "en-US"
 		}
 	],
-	"dictionaries": [
-		"npm",
-		"node",
-		"javascript",
-		"typescript",
-		"html",
-		"css",
-		"cspell-dictionary",
-		"custom-dictionary"
-	],
+	"dictionaries": ["npm", "node", "javascript", "typescript", "html", "css", "cspell-dictionary", "custom-dictionary"],
 	"dictionaryDefinitions": [
 		{
 			"name": "custom-dictionary",
