@@ -1,0 +1,17 @@
+{
+	"recommendations": [
+		"editorconfig.editorconfig",
+		"aaron-bond.better-comments",
+		"streetsidesoftware.code-spell-checker",
+		"mikestead.dotenv",
+		"ms-azuretools.vscode-docker",
+		"dbaeumer.vscode-eslint",
+		"github.vscode-github-actions",
+		"visualstudioexptteam.vscodeintellicode",
+		"visualstudioexptteam.intellicode-api-usage-examples",
+		"davidanson.vscode-markdownlint",
+		"christian-kohler.path-intellisense",
+		"esbenp.prettier-vscode",
+		"yoavbls.pretty-ts-errors"
+	]
+}
