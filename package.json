@@ -1,0 +1,35 @@
+{
+	"name": "teamnest-api",
+	"description": "A secure and efficient staff and task management API for the Teamnest application. Providing RESTful endpoints for user authentication, employee management, and other essential features. Equipped with JWT authentication, route protection, and more.",
+	"private": true,
+	"version": "0.1.0",
+	"homepage": "https://github.com/mister-fix/teamnest-api#readme",
+	"author": "@mister-fix (https://github.com/mister-fix)",
+	"license": "AGPL-3.0-only",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mister-fix/teamnest-api.git"
+	},
+	"keywords": [
+		"staff management",
+		"task management",
+		"project management",
+		"Node.js",
+		"Express.js",
+		"API",
+		"REST API"
+	],
+	"type": "module",
+	"scripts": {
+		"prepare": "husky || true",
+		"cspell": "cspell ."
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.7.1",
+		"@commitlint/config-conventional": "^19.7.1",
+		"@commitlint/format": "^19.5.0",
+		"cspell": "^8.17.3",
+		"cspell-dictionary": "^8.17.3",
+		"husky": "^9.1.7"
+	}
+}
