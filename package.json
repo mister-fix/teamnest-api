@@ -20,16 +20,47 @@
 		"REST API"
 	],
 	"type": "module",
+	"lint-staged": {
+		"**/*.{js,ts}": [
+			"eslint --fix",
+			"prettier --write --ignore-unknown"
+		],
+		"**/*.{json,jsonc,md,yml,yaml}": [
+			"prettier --write --ignore-unknown"
+		]
+	},
 	"scripts": {
 		"prepare": "husky || true",
-		"cspell": "cspell ."
+		"cspell": "cspell .",
+		"lint": "eslint . ",
+		"lint:fix": "eslint . --fix",
+		"prettier": "prettier . --write",
+		"format": "npm run lint:fix && npm run prettier"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.7.1",
 		"@commitlint/config-conventional": "^19.7.1",
 		"@commitlint/format": "^19.5.0",
+		"@eslint/js": "^9.20.0",
 		"cspell": "^8.17.3",
 		"cspell-dictionary": "^8.17.3",
-		"husky": "^9.1.7"
+		"eslint": "^9.20.1",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-import-resolver-alias": "^1.1.2",
+		"eslint-import-resolver-typescript": "^3.8.2",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-jsonc": "^2.19.1",
+		"eslint-plugin-n": "^17.15.1",
+		"eslint-plugin-prettier": "^5.2.3",
+		"eslint-plugin-security": "^3.0.1",
+		"eslint-plugin-unused-imports": "^4.1.4",
+		"globals": "^15.15.0",
+		"husky": "^9.1.7",
+		"jsonc-eslint-parser": "^2.4.0",
+		"lint-staged": "15.4.3",
+		"prettier": "3.5.1",
+		"prettier-plugin-organize-imports": "4.1.0",
+		"pretty-quick": "4.0.0",
+		"typescript-eslint": "^8.24.1"
 	}
 }
