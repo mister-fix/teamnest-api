@@ -140,3 +140,6 @@ dist
 
 # Plop templates
 plop-templates/
+
+# Prettier config file
+.prettierrc
