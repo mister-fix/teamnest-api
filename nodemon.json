@@ -1,0 +1,9 @@
+{
+	"ignore": ["*/**/*.md", "tests/", "src/**/*.test.js"],
+	"ext": "js, ts, json, mjs",
+	"env": {
+		"NODE_ENV": "development"
+	},
+	"verbose": true,
+	"legacyWatch": true
+}
