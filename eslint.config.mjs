@@ -19,13 +19,14 @@ export default [
 	// Typescript ESLint config
 	...tseslint.configs.recommended,
 	{
-		files: ['**/*.{js,cjs,mjs,ts}'],
+		files: ['**/*.{ts,tsx}'],
 		languageOptions: {
 			parser: tseslint.parser,
 			parserOptions: {
-				// project: './tsconfig.json',
+				project: './tsconfig.json',
 				ecmaVersion: 'latest',
 				sourceType: 'module',
+				tsConfigRootDir: './',
 			},
 		},
 		plugins: {
@@ -67,17 +68,18 @@ export default [
 			'import/resolver': {
 				typescript: {
 					alwaysTryTypes: true,
-					// project: './tsconfig.json'
+					project: './tsconfig.json',
+					tsConfigRootDir: './',
 				},
 				node: {
 					paths: ['src'],
-					// moduleDirectory: ['node_modules', 'src/'],
+					moduleDirectory: ['node_modules', 'src/'],
 					extensions: ['.js', '.cjs', '.mjs', '.ts', '.json'],
 				},
 				alias: {
 					map: [
-						['@src', './src/*'],
-						['@config', './src/config*'],
+						['@', './src/*'],
+						['@/config/*', './src/config/*'],
 					],
 					extensions: ['.js', '.ts', '.json'],
 				},
@@ -104,6 +106,12 @@ export default [
 
 			// N rules
 			'n/exports-style': ['error', 'exports'],
+			'n/no-missing-import': [
+				'error',
+				{
+					allowModules: ['./', './src'],
+				},
+			],
 
 			// Prettier rules
 			'prettier/prettier': 'error',
@@ -119,14 +127,24 @@ export default [
 					ignoreComments: true,
 				},
 			],
+			indent: ['error', 'tab', { SwitchCase: 1 }],
 			quotes: ['error', 'single'],
 			semi: ['error', 'always'],
+			eqeqeq: 'error',
 			'arrow-spacing': ['error', { before: true, after: true }],
 			'brace-style': ['error', '1tbs', { allowSingleLine: true }],
 			'object-curly-spacing': ['error', 'always'],
 			'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
 			'no-trailing-spaces': 'error',
 			'no-console': 'error',
+			'no-unused-vars': [
+				'warn',
+				{
+					vars: 'all',
+					args: 'after-used',
+					ignoreRestSiblings: false,
+				},
+			],
 		},
 	},
 
@@ -137,7 +155,6 @@ export default [
 	},
 
 	// Apply JSON config and rules
-	...jsoncPlugin.configs['flat/recommended-with-jsonc'],
 	...jsoncPlugin.configs['flat/recommended-with-jsonc'],
 	{
 		rules: {
