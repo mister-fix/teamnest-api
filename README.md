@@ -29,7 +29,7 @@ The **Teamnest API** is the backend for **Teamnest**, a staff and task managemen
 
 Detailed instructions on how to get the API up and running on your local machine and how to access the API on the web are coming soon.
 
-<!-- Follow the steps below to get Teamnest API up and running on your local machine or deployed to Fly.io. These quick start instructions assume you have Node.js, NPM, Docker, and the GitHub CLI installed on your machine.
+Follow the steps below to get Teamnest API up and running on your local machine or deployed to Fly.io. These quick start instructions assume you have Node.js, NPM, Docker, and the GitHub CLI installed on your machine.
 
 ### Clone the Repository
 
@@ -44,18 +44,23 @@ cd teamnest-api
 npm install
 ```
 
-### Build and Start the API (with Docker)
+### Create Local .env file
+
+Using the `.env.example` file as a base, create a `.env` file in the root of the project directory with the environment variables matching the names listed in the `.env.example` file.
+Feel free to provide any desired port and host configuration when running the API locally, as well as any secrets for JWT, Bcrypt, and MongoDB.
+
+### Build and Start the API
 
 ```bash
-docker build -t teamnest-api .
-docker run -p 3000:3000 teamnest-api
+npm run build
+npm start
 ```
 
 ### Access the API
 
-Once the API is running, you can access it locally at: [http://localhost:3000/api](http://localhost:3000/api)
+Once the API is running, you can access it locally at: `http://localhost:{your_port_number}/api`. You can use VSCode extensions like [RestClient](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), [ThunderClient](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client), or [Postman](https://www.postman.com/) to make HTTP requests to the API.
 
-Alternatively, the API is accessible via the web at: [https://teamnest-api.fly.dev/api](https://teamnest-api.fly.dev/api). This URL provides access to the Teamnest API endpoints, allowing interaction with the API from any web client or tool like Postman or Hoppscotch. -->
+<!-- Alternatively, the API is accessible via the web at: [https://teamnest-api.fly.dev/api](https://teamnest-api.fly.dev/api). This URL provides access to the Teamnest API endpoints, allowing interaction with the API from any web client or tool like Postman or Hoppscotch. -->
 
 ## API Documentation
 
@@ -82,18 +87,30 @@ teamnest-api/
 ├─ .husky/                # Git hooks for commit checks
 ├─ .vscode/               # VSCode settings and extensions
 ├─ docs/                  # GitHub supporting documents and templates
+├─ src/                   # Main source code directory
+│  ├─ config/             # Configuration files (e.g., database, environment)
+│  ├─ middleware/         # Express middleware functions
+│  ├─ app.js              # Express app setup
 ├─ .editorconfig          # Editor configuration for consistent coding styles
+├─ .env.example           # Example .env file
 ├─ .gitattributes         # Git attributes for the project
 ├─ .gitignore             # Git ignore rules for the project
+├─ .prettierignore        # Files and directories to ignore for Prettier
+├─ .prettierrc.js         # Prettier configuration for code formatting
 ├─ CHANGELOG.md           # Changelog for project updates
-├─ commitlint.config.js   # Commit message linting configuration
+├─ commitlint.config.mjs   # Commit message linting configuration
 ├─ cspell.json            # Configuration for spellcheck
+├─ eslint.config.mjs      # ESLint configuration for code linting
+├─ index.ts               # Application entry point
 ├─ LICENSE                # Project license
 ├─ logo-light.svg         # Light mode logo for the project
 ├─ logo.svg               # Primary logo for the project
+├─ nodemon.json           # Nodemon configuration for automatic server restarts
 ├─ package-lock.json      # Locked versions of dependencies
 ├─ package.json           # Project metadata and dependencies
+├─ plopfile.js            # Plop.js configuration for code generation
 ├─ README.md              # Project documentation
+├─ tsconfig.json          # TypeScript project configuration
 ```
 
 ## Installation
@@ -102,7 +119,24 @@ Project installation instructions are currently being prepared.
 
 ## Built With
 
-List of project dependencies will be available soon, you can also look at the [package.json](./package.json) file's dependencies section for current packages being utilized.
+List of project dependencies will evolve over time depending on the updates and needs of the project. For a more up to date list,
+you can look at the [package.json](./package.json) file's dependencies section for current packages being utilized.
+
+- [TypeScript](https://typescriptlang.org) - A strongly typed programming language that builds on JavaScript.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - A lightweight interpreted programming language.
+- [Node.js](https://nodejs.org/) - JavaScript runtime and server environment.
+- [Express.js](https://expressjs.com/) - Backend and Node.js framework.
+- [Express Rate Limit](https://www.npmjs.com/package/express-rate-limit) - Rate limiting middleware for Express.
+- [CORS](https://github.com/expressjs/cors) - Express middleware to handle CORS.
+- [Helmet](https://helmetjs.github.io/) - Express middleware to secure.
+- [Dotenv](https://www.npmjs.com/package/dotenv) - Loads environment variables from a '.env' file into process.env
+- [Winston](https://www.npmjs.com/package/winston) - Log files.
+- [Morgan](https://www.npmjs.com/package/morgan) - HTTP request logger middleware.
+- [Plop](https://plopjs.com/) - File and code generator.
+- [ESLint](https://eslint.org/) - Tool for identifying and reporting on patterns found in code.
+- [Prettier](https://prettier.io/) - Code formatter.
+- [Husky](https://typicode.github.io/husky/) - Manage Git hooks.
+- [GitHub Actions](https://docs.github.com/en/actions) - CI/CD workflows.
 
 ## Author
 
