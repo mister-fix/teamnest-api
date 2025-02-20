@@ -109,7 +109,7 @@ export default [
 			'n/no-missing-import': [
 				'error',
 				{
-					allowModules: ['./', './src'],
+					tryExtensions: ['.ts', '.js'],
 				},
 			],
 
@@ -143,6 +143,7 @@ export default [
 					vars: 'all',
 					args: 'after-used',
 					ignoreRestSiblings: false,
+					argsIgnorePattern: '^_',
 				},
 			],
 		},
