@@ -27,6 +27,26 @@ Initial project setup with essential files and folders.
   - `eslint.config.mjs`: Added ESLint configuration for linting JavaScript and TypeScript.
   - `.prettierrc`: Added Prettier configuration for code formatting.
   - `.prettierignore`: Added Prettier ignore file to exclude specific files/directories from formatting.
+  - `nodemon.json`: Added Nodemon configuration for automatic server restarts during development.
+  - `plopfile.js`: Added Plop generator configuration for scaffolding project files.
+  - `tsconfig.json`: Added TypeScript configuration file.
+  - `index.ts`: Added main API entry point where the server is launched.
+  - `src/config/cors-options.js`: Added CORS configuration file.
+  - `src/config/csp-directives.js`: Added Content Security Policy (CSP) directives.
+  - `src/config/whitelist.js`: Added whitelist configuration for allowed domains.
+  - `src/middleware/not-found.ts`: Added middleware for handling 404 (Not Found) errors.
+  - `src/middleware/error-handler.ts`: Added centralized error-handling middleware.
+  - `src/app.ts`: Added Express application setup.
+  - `.env.example`: Added example environment variables file.
+- **Package Updates**:
+  - `package.json`:
+    - Added TypeScript ESLint dependencies and TypeScript configuration dependencies.
+    - Added scripts for building the server, starting in development mode, and running in production.
+- **Documentation**:
+  - `README.md`:
+    - Added **Built With** section listing dependencies and packages used in the project.
+    - Expanded the project structure diagram to reflect newly added files and folders.
+    - Added **Quick Start** instructions for installing and launching the server via CLI.
 - **New Folders**:
   - `.github`: Added to house GitHub Actions workflows and issue templates.
     - `stale.yml`: Added to manage stale issues on the GitHub project repository.
@@ -55,10 +75,15 @@ Initial project setup with essential files and folders.
 ### Changed
 
 - Reformatted `.vscode/extensions.json`, `commitlint.config.js`, and `cspell.json` files with Prettier and ESLint for consistent styling and code quality.
+- `eslint.config.mjs`: Updated ESLint configuration to enforce rules for TypeScript files.
+- Renamed `commitlint.config.js` to `commitlint.config.mjs`.
+- `.prettierignore`: Add ignore pattern for the Prettier config file.
 
 ### Fixed
 
-- N/A
+- `.prettierrc`: Changed quotation marks from single quotes to double quotes in configuration rules and options.
+- `.husky/pre-commit`: Changed the pretty-quick command to ignore the `.prettierrc` file.
+- `package.json`: lint-staged config to ignore `.prettierrc` file.
 
 ### Removed
 
