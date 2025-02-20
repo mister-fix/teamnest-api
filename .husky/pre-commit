@@ -3,4 +3,4 @@
 
 npx commitlint --from HEAD~1 --to HEAD --verbose
 npx lint-staged
-npx pretty-quick --staged
+npx pretty-quick --staged --ignore-stdin --ignore "*.prettierrc"
