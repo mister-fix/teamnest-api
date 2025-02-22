@@ -1,22 +1,24 @@
 import { NextFunction, Request, Response } from 'express';
 
+import logger from '@/utils/logger';
+
 /**
- * Interface for custom error objects
+ * Interface for custom error objects.
  */
-interface ErrorWithStatus extends Error {
+interface CustomError extends Error {
 	statusCode?: number;
 	stack?: string;
 }
 
 /**
  * Middleware to handle all errors.
- * @param err - The error object.
- * @param req - The Express request object.
- * @param res - The Express response object.
- * @param next - The Express next function.
+ * @param err - Error object.
+ * @param req - Express request object.
+ * @param res - Express response object.
+ * @param next - Express next function.
  */
 export const errorHandler = (
-	err: ErrorWithStatus,
+	err: CustomError,
 	req: Request,
 	res: Response,
 	_next: NextFunction
@@ -32,10 +34,8 @@ export const errorHandler = (
 	};
 
 	// Log the error for debugging purposes
-	// eslint-disable-next-line no-console
-	console.error(`Error: ${err.message}`);
-	// eslint-disable-next-line no-console
-	console.error(`Error: ${err.stack}`);
+	logger.error(`Error: ${err.message}`);
+	logger.error(`Error: ${err.stack}`);
 
 	// Send the error response
 	res.status(statusCode).json(errorResponse);
