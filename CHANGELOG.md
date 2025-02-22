@@ -69,8 +69,12 @@ Initial project setup with essential files and folders.
     - `pre-commit`: Added Husky pre-commit hook for running linting and formatting checks.
   - `.cspell/`: Added to house any custom dictionaries for CSpell.
     - `custom-dictionary.txt`: Added to ignore or inform CSpell of project specific terms.
+  - `src/utils`: Added to house utility modules used in the API source code.
+    - `logger.ts`: Added custom console logging utility built on Winston.
+- **Configurations**:
 - Configured `lint-staged` in the `package.json` file to run pre-commit linting.
 - ESLint and Prettier scripts in the `package.json` file to lint and format files for consistency and code quality.
+- `tsconfig.json`: Paths to the `controllers`, `middleware`, `models`, `routes`, `services`, `utils`, and `validators` directories.
 
 ### Changed
 
@@ -84,6 +88,11 @@ Initial project setup with essential files and folders.
 - `.prettierrc`: Changed quotation marks from single quotes to double quotes in configuration rules and options.
 - `.husky/pre-commit`: Changed the pretty-quick command to ignore the `.prettierrc` file.
 - `package.json`: lint-staged config to ignore `.prettierrc` file.
+- `eslint.config.mjs`: Fixed import error associated with the "no-extraneous-dependencies" rule.
+
+### Refactored
+
+- `src/app.ts`: Added event listener for when the server is active and listening.
 
 ### Removed
 
