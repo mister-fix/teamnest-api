@@ -32,7 +32,13 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"@/config/*": ["./src/config/*"],
-			"@/middleware/*": ["./src/middleware/*"]
+			"@/controllers/*": ["./src/controllers/*"],
+			"@/middleware/*": ["./src/middleware/*"],
+			"@/models/*": ["./src/models/*"],
+			"@/routes/*": ["./src/routes/*"],
+			"@/services/*": ["./src/services/*"],
+			"@/utils/*": ["./src/utils/*"],
+			"@/validators/*": ["./src/validators/*"]
 		} /* Specify a set of entries that re-map imports to additional lookup locations. */,
 		// "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
 		// "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
