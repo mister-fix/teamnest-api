@@ -102,7 +102,14 @@ export default [
 				},
 			],
 			'import/no-unresolved': 'error',
-			'import/no-extraneous-dependencies': 'error',
+			'import/no-extraneous-dependencies': [
+				'error',
+				{
+					devDependencies: true,
+					optionalDependencies: false,
+					peerDependencies: false,
+				},
+			],
 
 			// N rules
 			'n/exports-style': ['error', 'exports'],
