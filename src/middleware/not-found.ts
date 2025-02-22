@@ -1,5 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 
+import logger from '@/utils/logger';
+
 /**
  * Middleware to handle 404 Not Found errors.
  * @param req - Express request object.
@@ -12,16 +14,15 @@ export const unknownEndpoint = (
 	next: NextFunction
 ) => {
 	// Create a detailed error message
-	const errorMessage = `The requested resource '${req.originalUrl}' was not found.`;
+	const errorMessage = `The requested resource '${req.originalUrl}' was not found`;
 
 	// Log the error for debugging purposes
-	// eslint-disable-next-line no-console
-	console.error(`404 Not found: ${errorMessage}`);
+	logger.error(`404 Not Found: ${errorMessage}`);
 
 	// Set the response status to 404
 	res.status(404);
 
-	// Pass the error the to the next middleware
+	// Pass the error to the next middleware
 	next({
 		message: errorMessage,
 		statusCode: 404,
