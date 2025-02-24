@@ -18,3 +18,5 @@ mult
 hoppscotch
 flyctl
 flydotio
+tspc
+codepaths

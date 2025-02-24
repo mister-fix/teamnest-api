@@ -6,9 +6,8 @@
 
 import os from 'os';
 
-import colors from '@colors/colors';
+import chalk from 'chalk';
 import winston, { createLogger, format, transports } from 'winston';
-import winstonTimestampColorize from 'winston-timestamp-colorize';
 
 // Get the machine hostname (machine ID)
 const machineID = os.hostname();
@@ -25,10 +24,10 @@ const customLevels = {
 		debug: 6,
 	},
 	colors: {
-		fatal: 'white redGB',
+		fatal: 'white bgRed',
 		error: 'red',
 		warn: 'yellow',
-		success: 'brightGreen',
+		success: 'green',
 		info: 'white',
 		verbose: 'cyan',
 		debug: 'magenta',
@@ -56,14 +55,14 @@ winston.addColors(customLevels.colors);
 const consoleFormat = winston.format.combine(
 	format.splat(),
 	format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), // Adds timestamp
-	winstonTimestampColorize({ color: 'grey' }),
 	// format.align(),
 	format.printf(({ timestamp, level, message }) => {
-		const pid = colors.brightYellow(String(process.pid));
+		const pid = chalk.yellowBright(String(process.pid));
 		const isDev = process.env.NODE_ENV !== 'production';
+		const coloredTimestamp = chalk.grey(timestamp);
 
 		return isDev
-			? `${timestamp} ${machineID} (${pid}) [${level}]: ${message}`
+			? `${coloredTimestamp} ${machineID} (${pid}) [${level}]: ${message}`
 			: `${message}`;
 	})
 );
@@ -83,7 +82,7 @@ const fileFormat = format.combine(
  * @function
  * @constant
  */
-const logger = createLogger({
+const customLogger = createLogger({
 	levels: customLevels.levels,
 	// Define the transports
 	transports: [
@@ -95,7 +94,7 @@ const logger = createLogger({
 					info.level = levelAbbreviations[info.level as LogLevel].toUpperCase();
 					return info;
 				})(),
-				format.colorize(), // Adds color to the log level
+				format.colorize({ all: true }), // Adds color to the log level
 				consoleFormat // Apply common format with timestamp and message
 			),
 		}),
@@ -160,6 +159,26 @@ const logger = createLogger({
 		}),
 	],
 });
+
+interface Logger extends winston.Logger {
+	fatal: winston.LeveledLogMethod;
+	success: winston.LeveledLogMethod;
+}
+
+const logger = customLogger as Logger;
+
+/**
+ * Example usage of custom logger
+ * -----------------------------------------------
+ * -----------------------------------------------
+ * logger.fatal('This is a fatal message');
+ * logger.error('This is an error message');
+ * logger.warn('This is a warning message');
+ * logger.success('This is a success message');
+ * logger.info('This is an info message');
+ * logger.verbose('This is a verbose message');
+ * logger.debug('This is a debug message');
+ */
 
 // Exporting logger
 export default logger;
