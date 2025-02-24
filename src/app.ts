@@ -1,6 +1,6 @@
 import compression from 'compression';
 import cors from 'cors';
-import express from 'express';
+import express, { Request, Response } from 'express';
 import 'express-async-errors';
 import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
@@ -8,8 +8,10 @@ import morgan from 'morgan';
 
 import corsOptions from '@/config/cors-options';
 import cspDirectives from '@/config/csp-directives';
+import morganFormat from '@/config/morgan-format';
 import { errorHandler } from '@/middleware/error-handler';
 import { unknownEndpoint } from '@/middleware/not-found';
+import requestsLogger from '@/middleware/requests-logger';
 
 const app = express();
 
@@ -41,9 +43,12 @@ const limiter = rateLimit({
 // Applying the rate limiting middleware to all requests
 app.use(limiter);
 
-// Logging
-if (app.get('env') === 'development') {
-	app.use(morgan('dev'));
+// Enable morgan with custom format
+app.use(morgan(morganFormat));
+
+// Enable HTTP request logging
+if (process.env.NODE_ENV !== 'production') {
+	app.use(requestsLogger);
 }
 
 // Serve static files from the 'dist' directory
@@ -54,8 +59,13 @@ app.get('/', (req, res) => {
 	res.redirect('/api');
 });
 
+// Ignore request for 'favicon'
+app.get('/favicon.ico', (req: Request, res: Response) => {
+	res.status(204).end();
+});
+
 // Main API endpoint
-app.get('/api', (req, res) => {
+app.get('/api', (req: Request, res: Response) => {
 	res.status(200).json({
 		status: 'OK',
 		message: 'Hello from the API👋',
@@ -63,7 +73,7 @@ app.get('/api', (req, res) => {
 });
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (req: Request, res: Response) => {
 	res.status(200).json({
 		status: 'OK',
 		message: 'API is running 👍',
