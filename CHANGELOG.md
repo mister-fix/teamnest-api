@@ -75,6 +75,10 @@ Initial project setup with essential files and folders.
 - Configured `lint-staged` in the `package.json` file to run pre-commit linting.
 - ESLint and Prettier scripts in the `package.json` file to lint and format files for consistency and code quality.
 - `tsconfig.json`: Paths to the `controllers`, `middleware`, `models`, `routes`, `services`, `utils`, and `validators` directories.
+- `.cspell/custom-dictionary.txt`: Added 'tspc' and 'codepaths' to list of custom terms.
+- `src/config/morgan-format.js`: Added custom message format for use with Morgan.
+- `src/config/express-winston-format.js`: Added custom log format for logging HTTP requests with Winston.
+- `src/middleware/requests-logger.ts`: Added custom middleware to log HTTP requests to file in development mode.
 
 ### Changed
 
@@ -82,6 +86,10 @@ Initial project setup with essential files and folders.
 - `eslint.config.mjs`: Updated ESLint configuration to enforce rules for TypeScript files.
 - Renamed `commitlint.config.js` to `commitlint.config.mjs`.
 - `.prettierignore`: Add ignore pattern for the Prettier config file.
+- `src/app.ts`: Added 'favicon' GET request bypass.
+- `src/app.ts`: Enabled custom HTTP requests logging middleware.
+- `src/utils/logger.ts`: Changed terminal string styling package from '@colors/colors' to 'chalk'.
+- `package.json`: Installed 'date-fns', 'uuid', and 'express-winston' packages.
 
 ### Fixed
 
@@ -96,6 +104,6 @@ Initial project setup with essential files and folders.
 
 ### Removed
 
-- N/A
+- `winston-timestamp-colorize` package.
 
 [unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.1.0...HEAD
