@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 02/25/2025
+
 ### Added
 
 - `package.json`: Plop run command in the scripts section.
@@ -29,6 +31,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - `README.md`: Spacing and alignment of file and folder names and their descriptions in the project structure.
+
+### Removed
+
+- N/A (No removals in this release)
 
 ## [0.1.0] Initial Release - 02/24/2025
 
@@ -131,5 +137,6 @@ Initial project setup with essential files and folders.
 
 - `winston-timestamp-colorize` package.
 
-[unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.1.0...HEAD
+[unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/mister-fix/teamnest-api/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/mister-fix/teamnest-api/releases/tag/v0.1.0
