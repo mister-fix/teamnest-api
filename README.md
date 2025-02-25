@@ -82,35 +82,37 @@ Detailed API usage documentation is coming soon.
 
 ```ASCII
 teamnest-api/
-├─ .cspell/               # Spellcheck files
-├─ .github/               # GitHub CI/CD workflows and issue templates
-├─ .husky/                # Git hooks for commit checks
-├─ .vscode/               # VSCode settings and extensions
-├─ docs/                  # GitHub supporting documents and templates
-├─ src/                   # Main source code directory
-│  ├─ config/             # Configuration files (e.g., database, environment)
-│  ├─ middleware/         # Express middleware functions
-│  ├─ app.js              # Express app setup
-├─ .editorconfig          # Editor configuration for consistent coding styles
-├─ .env.example           # Example .env file
-├─ .gitattributes         # Git attributes for the project
-├─ .gitignore             # Git ignore rules for the project
-├─ .prettierignore        # Files and directories to ignore for Prettier
-├─ .prettierrc.js         # Prettier configuration for code formatting
-├─ CHANGELOG.md           # Changelog for project updates
-├─ commitlint.config.mjs   # Commit message linting configuration
-├─ cspell.json            # Configuration for spellcheck
-├─ eslint.config.mjs      # ESLint configuration for code linting
-├─ index.ts               # Application entry point
-├─ LICENSE                # Project license
-├─ logo-light.svg         # Light mode logo for the project
-├─ logo.svg               # Primary logo for the project
-├─ nodemon.json           # Nodemon configuration for automatic server restarts
-├─ package-lock.json      # Locked versions of dependencies
-├─ package.json           # Project metadata and dependencies
-├─ plopfile.js            # Plop.js configuration for code generation
-├─ README.md              # Project documentation
-├─ tsconfig.json          # TypeScript project configuration
+├─ .cspell/                 # Spellcheck files
+├─ .github/                 # GitHub CI/CD workflows and issue templates
+├─ .husky/                  # Git hooks for commit checks
+├─ .vscode/                 # VSCode settings and extensions
+├─ docs/                    # GitHub supporting documents and templates
+├─ plop-templates/          # Code generation templates (e.g., controllers, services, etc.)
+├─ src/                     # Main source code directory
+│  ├─ config/               # Configuration files (e.g., database, environment)
+│  ├─ middleware/           # Express middleware functions
+│  ├─ utils/                # Utility functions (e.g., retry mechanisms, logger)
+│  ├─ app.ts                # Express app setup
+├─ .editorconfig            # Editor configuration for consistent coding styles
+├─ .env.example             # Example .env file
+├─ .gitattributes           # Git attributes for the project
+├─ .gitignore               # Git ignore rules for the project
+├─ .prettierignore          # Files and directories to ignore for Prettier
+├─ .prettierrc              # Prettier configuration for code formatting
+├─ CHANGELOG.md             # Changelog for project updates
+├─ commitlint.config.mjs    # Commit message linting configuration
+├─ cspell.json              # Configuration for spellcheck
+├─ eslint.config.mjs        # ESLint configuration for code linting
+├─ index.ts                 # Application entry point
+├─ LICENSE                  # Project license
+├─ logo-light.svg           # Light mode logo for the project
+├─ logo.svg                 # Primary logo for the project
+├─ nodemon.json             # Nodemon configuration for automatic server restarts
+├─ package-lock.json        # Locked versions of dependencies
+├─ package.json             # Project metadata and dependencies
+├─ plopfile.mjs             # Plop.js configuration for code generation
+├─ README.md                # Project documentation
+├─ tsconfig.json            # TypeScript project configuration
 ```
 
 ## Installation
