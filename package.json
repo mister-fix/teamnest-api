@@ -2,7 +2,7 @@
 	"name": "teamnest-api",
 	"description": "A secure and efficient staff and task management API for the Teamnest application. Providing RESTful endpoints for user authentication, employee management, and other essential features. Equipped with JWT authentication, route protection, and more.",
 	"private": true,
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"homepage": "https://github.com/mister-fix/teamnest-api#readme",
 	"author": "@mister-fix (https://github.com/mister-fix)",
 	"license": "AGPL-3.0-only",
