@@ -1,0 +1,11 @@
+import { Request, Response } from 'express';
+
+{{#if model}}
+// Import required models
+import {{model}} from '@/models/{{model}}';
+{{/if}}
+
+/**
+  * Place your controller methods here
+  * ex: export const methodName = (req: Request, res: Response) => {}
+  * /
