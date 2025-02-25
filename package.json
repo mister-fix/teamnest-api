@@ -38,7 +38,8 @@
 		"lint": "eslint . ",
 		"lint:fix": "eslint . --fix",
 		"prettier": "prettier . \"!.prettierrc\" --write",
-		"format": "npm run lint:fix && npm run prettier"
+		"format": "npm run lint:fix && npm run prettier",
+		"plop": "plop"
 	},
 	"dependencies": {
 		"@colors/colors": "^1.6.0",
