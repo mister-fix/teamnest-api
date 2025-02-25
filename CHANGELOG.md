@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `package.json`: Plop run command in the scripts section.
+- **New Folders**:
+  - `plop-templates/`: Added directory to house file and code templates for use with Plop generators.
+- **New files**:
+  - `plop-templates/controller.hbs`
+  - `plop-templates/middleware.hbs`
+  - `plop-templates/model.hbs`
+  - `plop-templates/router.hbs`
+  - `plop-templates/service.hbs`
+  - `plop-templates/util.hbs`
+- **Features**:
+  - `plopfile.mjs`: Configured Plop generators to create useful files for API modules (controllers, models, etc.).
+
+### Changed
+
+- `README.md`: File name extensions from `.js` to `.ts` and `.mjs` in the project structure.
+
+### Fixed
+
+- `README.md`: Spacing and alignment of file and folder names and their descriptions in the project structure.
+
 ## [0.1.0] Initial Release - 02/24/2025
 
 Initial project setup with essential files and folders.
