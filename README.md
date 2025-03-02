@@ -91,6 +91,7 @@ teamnest-api/
 ├─ src/                     # Main source code directory
 │  ├─ config/               # Configuration files (e.g., database, environment)
 │  ├─ middleware/           # Express middleware functions
+│  ├─ models/               # Mongoose models (e.g., Task, User)
 │  ├─ utils/                # Utility functions (e.g., retry mechanisms, logger)
 │  ├─ app.ts                # Express app setup
 ├─ .editorconfig            # Editor configuration for consistent coding styles
