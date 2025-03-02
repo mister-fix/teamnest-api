@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `src/models/Organization.ts`: Defined the `Organization` schema.
 - `src/models/Team.ts`: Defined the `Team` schema.
 - `src/models/User.ts`: Defined the `User` schema.
+- `src/models/Task.ts`: Defined the `Task` schema.
+- `src/models/Project.ts`: Defined the `Project` schema.
+- `src/models/Notification.ts`: Defined the `Notification` schema.
 
 ### Changed
 
