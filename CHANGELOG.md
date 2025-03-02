@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Introduced an interface (`{{titleCase name}}Interface`) extending `Document`, allowing for explicit property definitions in the model.
   - Updated schema definition syntax to `Schema<{{titleCase name}}Interface>` for stronger type enforcement.
   - Modified model export to use `export const` instead of `export default`, aligning with TypeScript best practices and enabling named imports.
+- `README.md`: Added `models` directory to the project structure.
 
 ### Fixed
 
