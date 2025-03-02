@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `src/models/Organization.ts`: Defined the `Organization` schema.
+- `src/models/Team.ts`: Defined the `Team` schema.
+- `src/models/User.ts`: Defined the `User` schema.
+
+### Changed
+
+- `package.json`: Installed `bcrypt`.
+- `plop-templates/model.hbs`:
+  - Refactored Mongoose schema definition to use TypeScript interfaces, improving type safety and code maintainability.
+  - Replaced default Mongoose import with named imports (`Document`, `Schema`, `model`) for better modularity.
+  - Introduced an interface (`{{titleCase name}}Interface`) extending `Document`, allowing for explicit property definitions in the model.
+  - Updated schema definition syntax to `Schema<{{titleCase name}}Interface>` for stronger type enforcement.
+  - Modified model export to use `export const` instead of `export default`, aligning with TypeScript best practices and enabling named imports.
+
+### Fixed
+
+- N/A (No fixes in this release)
+
+### Removed
+
+- N/A (No removals in this release)
+
 ## [0.1.1] - 02/25/2025
 
 ### Added
