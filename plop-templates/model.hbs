@@ -1,10 +1,16 @@
-import mongoose from 'mongoose';
+import { Document, Schema, model } from 'mongoose';
+
+interface {{titleCase name}}Interface extends Document {
+  /**
+    * Place properties here
+    */
+};
 
 /**
   * @name {{titleCase name}}Schema
   * @description Mongoose schema for the {{titleCase name}} model.
   */
-const {{camelCase name}}Schema = new mongoose.Schema(
+const {{camelCase name}}Schema = new Schema<{{titleCase name}}Interface>(
   {},
   {
     timestamps: true,
@@ -29,4 +35,4 @@ const {{camelCase name}}Schema = new mongoose.Schema(
 });
 
 // Exporting the {{titleCase name}} model
-export default mongoose.model('{{titleCase name}}', {{camelCase name}}Schema);
+export const {{titleCase name}} = model<{{titleCase name}}Interface>('{{titleCase name}}', {{camelCase name}}Schema);
