@@ -1,6 +1,6 @@
 import compression from 'compression';
 import cors from 'cors';
-import express, { Request, Response } from 'express';
+import express, { Express, Request, Response } from 'express';
 import 'express-async-errors';
 import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
@@ -12,8 +12,9 @@ import morganFormat from '@/config/morgan-format';
 import { errorHandler } from '@/middleware/error-handler';
 import { unknownEndpoint } from '@/middleware/not-found';
 import requestsLogger from '@/middleware/requests-logger';
+import mainRouter from '@/routes/main-router';
 
-const app = express();
+const app: Express = express();
 
 // Application settings
 app.set('app name', 'Teamnest API'); // Setting the app name
@@ -65,22 +66,7 @@ app.get('/favicon.ico', (req: Request, res: Response) => {
 });
 
 // Main API endpoint
-app.get('/api', (req: Request, res: Response) => {
-	res.status(200).json({
-		status: 'OK',
-		message: 'Hello from the API👋',
-	});
-});
-
-// Health check endpoint
-app.get('/api/health', (req: Request, res: Response) => {
-	res.status(200).json({
-		status: 'OK',
-		message: 'API is running 👍',
-		app: app.get('app name'),
-		version: app.get('api version'),
-	});
-});
+app.use('/api', mainRouter);
 
 // 404 Not Found Middleware
 app.use(unknownEndpoint);
