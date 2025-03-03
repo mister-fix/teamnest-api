@@ -90,8 +90,10 @@ teamnest-api/
 ├─ plop-templates/          # Code generation templates (e.g., controllers, services, etc.)
 ├─ src/                     # Main source code directory
 │  ├─ config/               # Configuration files (e.g., database, environment)
+│  ├─ controllers/          # API route handlers
 │  ├─ middleware/           # Express middleware functions
 │  ├─ models/               # Mongoose models (e.g., Task, User)
+│  ├─ routes/               # API routes (e.g., health, users)
 │  ├─ utils/                # Utility functions (e.g., retry mechanisms, logger)
 │  ├─ app.ts                # Express app setup
 ├─ .editorconfig            # Editor configuration for consistent coding styles
