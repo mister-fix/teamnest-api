@@ -10,13 +10,13 @@
   * @see {@link https://expressjs.com/|Express Documentation}
   * @description This module is used to create and manage an Express application.
   */
-import express from 'express'
+import { Router } from 'express'
 
 // Import required middleware (remove if not needed)
 
 {{#if controller}}
-// Import required controller
-import controller from '@/controllers/{{controller}}-controller';
+// Import required methods from controller
+import {} from '@/controllers/{{controller}}-controller';
 {{/if}}
 
 /**
