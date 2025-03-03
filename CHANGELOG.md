@@ -9,12 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `src/models/Organization.ts`: Defined the `Organization` schema.
-- `src/models/Team.ts`: Defined the `Team` schema.
-- `src/models/User.ts`: Defined the `User` schema.
-- `src/models/Task.ts`: Defined the `Task` schema.
-- `src/models/Project.ts`: Defined the `Project` schema.
-- `src/models/Notification.ts`: Defined the `Notification` schema.
+- `src/app.ts`: Mounted the main API router to the application instance.
+- `src/models/`: Added to house the necessary models and schema definitions for the application.
+  - `./Organization.ts`: Defined the `Organization` schema.
+  - `./models/Team.ts`: Defined the `Team` schema.
+  - `./models/User.ts`: Defined the `User` schema.
+  - `./models/Task.ts`: Defined the `Task` schema.
+  - `./models/Project.ts`: Defined the `Project` schema.
+  - `./models/Notification.ts`: Defined the `Notification` schema.
+- `src/controllers/`: Added to house controllers for the application's routes.
+  - `./health-controller.ts`: Controller methods for the liveness and readiness endpoints.
+- `src/routes/`: Added to house the various routers for the application.
+  - `./main-router.ts`: Main application router (all other routers are imported and enabled here).
+  - `./health-router.ts`: Router to handle requests to the `/api/liveness` and `/api/readiness` endpoints.
 
 ### Changed
 
@@ -26,6 +33,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Updated schema definition syntax to `Schema<{{titleCase name}}Interface>` for stronger type enforcement.
   - Modified model export to use `export const` instead of `export default`, aligning with TypeScript best practices and enabling named imports.
 - `README.md`: Added `models` directory to the project structure.
+- `plop-templates/router.hbs`:
+  - Refactored import statement of controller methods.
+- `src/app.ts`: Refactored the declaration of the Express application instance to use the Express type.
 
 ### Fixed
 
