@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2025/3/21 (Commitlint and CSpell configuration)
+
 ### Added
 
 - `commitlint.config.js`: Added to enforce consistent Git commit message formatting using Commitlint.
@@ -43,5 +45,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated Node.js version in Spellcheck workflow to match project requirements (bumped up to `v20`).
 
-[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/mister-fix/teamnest-api/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/mister-fix/teamnest-api/releases/tag/v0.0.1
