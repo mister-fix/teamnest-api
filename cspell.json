@@ -1,0 +1,43 @@
+{
+	"version": "0.2",
+	"ignorePaths": [
+		"node_modules",
+		"dist",
+		"out",
+		"logs",
+		"e2e/playwright-report",
+		".git",
+		".husky/_",
+		".vscode/"
+	],
+	"languageSettings": [
+		{
+			"languageId": "*",
+			"locale": "en-US"
+		}
+	],
+	"dictionaries": [
+		"npm",
+		"node",
+		"javascript",
+		"typescript",
+		"cspell-dictionary",
+		"custom-dictionary"
+	],
+	"dictionaryDefinitions": [
+		{
+			"name": "custom-dictionary",
+			"path": "./.cspell/custom-dictionary.txt",
+			"addWords": true
+		}
+	],
+	"files": ["*.{txt,md,json,js,ts,yml,yaml}"],
+	"words": ["fullstack"],
+	"ignoreWords": ["teamnest", "linebreak", "commitlint", "commitlintrc"],
+	"import": [
+		"@cspell/dict-typescript/cspell-ext.json",
+		"@cspell/dict-node/cspell-ext.json",
+		"@cspell/dict-docker/cspell-ext.json",
+		"@cspell/dict-filetypes/cspell-ext.json"
+	]
+}
