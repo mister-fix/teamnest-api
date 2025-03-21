@@ -38,13 +38,19 @@ Detailed documentation of the API are currently being developed and will become 
 
 ```ASCII
 teamnest-api/
+├─ .cspell/                 # Configuration for spell-checking using CSpell
+├─ .husky/                  # Husky hooks for Git (e.g., pre-commit, pre-push)
 ├─ .editorconfig            # EditorConfig settings for consistent coding styles
 ├─ .gitattributes           # Git attributes for handling files (e.g., line endings)
 ├─ .gitignore               # Specifies files and directories to ignore in Git
 ├─ CHANGELOG.md             # Record of changes made to the project
+├─ commitlint.config.js     # Configuration for commit message linting
+├─ cspell.json              # Custom spell-checking configuration
 ├─ LICENSE                  # License file for the project
 ├─ logo-light.svg           # Light mode logo for the project
 ├─ logo.svg                 # Primary logo for the project
+├─ package-lock.json        # Locked versions of dependencies
+├─ package.json             # Project metadata and dependencies
 ├─ README.md                # Project documentation
 ```
 
