@@ -39,7 +39,9 @@ Detailed documentation of the API are currently being developed and will become 
 ```ASCII
 teamnest-api/
 ├─ .cspell/                 # Configuration for spell-checking using CSpell
+├─ .github/                 # GitHub-specific files (e.g., workflows, issue templates)
 ├─ .husky/                  # Husky hooks for Git (e.g., pre-commit, pre-push)
+├─ docs/                    # Project documentation files
 ├─ .editorconfig            # EditorConfig settings for consistent coding styles
 ├─ .gitattributes           # Git attributes for handling files (e.g., line endings)
 ├─ .gitignore               # Specifies files and directories to ignore in Git
@@ -56,11 +58,11 @@ teamnest-api/
 
 ## Contributing
 
-Contributions are welcome! Guidelines will be added soon.
+Contributions are welcome! Please follow the guidelines outlined in the [CONTRIBUTING.md](./docs/CONTRIBUTING.md) file for details on how to contribute.
 
 ## Code of Conduct
 
-Code of Conduct document will be added soon.
+Please adhere to our [Code of Conduct](./docs/CODE_OF_CONDUCT.md) when participating in the community.
 
 ## Author
 
