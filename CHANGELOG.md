@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.gitattributes`: Added to handle line endings and file types in Git, ensuring consistency across platforms.
 - `.gitignore`: Added to exclude unnecessary files (e.g., `node_modules`, build artifacts) from version control.
 - `CHANGELOG.md`: Added to track and document all notable changes to the project.
-- `LICENSE`: Added to define the GNU AGPL-3.0 License for open-source usage and distribution.
+- `LICENSE`: Added to define the MIT License for open-source usage and distribution.
 - `logo-light.svg`: Added as a light variant of the project logo for use in light-themed documents.
 - `logo.svg`: Added as the primary project logo for use in documents and branding.
 - `package.json`: Added to manage project metadata, dependencies, and scripts.
