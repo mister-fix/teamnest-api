@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **Spellcheck Workflow**:
+  - Updated the `name` property in `.github/workflows/spellcheck.yml` from "Spell Check with cspell" to "Spell Check" for consistency and readability.
+
 ## [0.2.0] - 2025-03-22 (ESLint and Prettier Integration)
 
 ### Added
