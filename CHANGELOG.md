@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `.github/stale.yml`: Added to configure the Stale bot for managing stale issues and pull requests.
+- `.github/workflows/commitlint.yml`: Added workflow to enforce commit message conventions on pushed commits on the repository.
+- `.github/workflows/spellcheck.yml`: Added workflow to check for spelling errors on pushed changes on the repository.
+
 ## [0.0.3] - 2025-03-21 (Community standards docs, and Git hooks)
 
 ### Added
