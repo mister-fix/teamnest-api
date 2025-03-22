@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2025-03-22 (Spell Check Workflow Fix)
+
 ### Fixed
 
 - **Spellcheck Workflow**:
@@ -104,7 +106,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated Node.js version in Spellcheck workflow to match project requirements (bumped up to v20).
 
-[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/mister-fix/teamnest-api/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/mister-fix/teamnest-api/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/mister-fix/teamnest-api/compare/v0.0.3...v0.1.0
 [0.0.3]: https://github.com/mister-fix/teamnest-api/compare/v0.0.2...v0.0.3
