@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2025-03-21 (GitHub Workflows Integration)
+
 ### Added
 
 - `.github/stale.yml`: Added to configure the Stale bot for managing stale issues and pull requests.
