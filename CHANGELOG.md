@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added ESLint, Prettier, and their respective plugins as development dependencies for code and file linting and formatting.
+- Added a Prettier ignore file to avoid formatting unnecessary files.
+- `.husky/pre-commit`: Added lint-staged and pretty quick scripts to lint and format commits and staged files.
+- Expanded project structure in `README.md` with ESLint and Prettier configuration and ignore files.
+- Lint and formatting scripts, and "lint-staged" configuration in the `package.json` file.
+
+### Changed
+
+- Formatted `.github/workflows/spellcheck.yml`, `CHANGELOG.md`, and `README.md` files with Prettier.
+
 ## [0.1.0] - 2025-03-21 (GitHub Workflows Integration)
 
 ### Added
