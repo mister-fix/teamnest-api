@@ -2,7 +2,7 @@
 	"name": "teamnest-api",
 	"description": "A secure and efficient staff and task management API for the Teamnest project.",
 	"private": true,
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"homepage": "https://github.com/mister-fix/teamnest-api#readme",
 	"license": "MIT",
 	"author": "@mister-fix (https://github.com/mister-fix/)",
