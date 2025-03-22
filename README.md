@@ -45,9 +45,12 @@ teamnest-api/
 ├─ .editorconfig            # EditorConfig settings for consistent coding styles
 ├─ .gitattributes           # Git attributes for handling files (e.g., line endings)
 ├─ .gitignore               # Specifies files and directories to ignore in Git
+├─ .prettierignore          # Files and directories to ignore for Prettier formatting
+├─ .prettier                # Prettier configuration for code formatting
 ├─ CHANGELOG.md             # Record of changes made to the project
 ├─ commitlint.config.js     # Configuration for commit message linting
 ├─ cspell.json              # Custom spell-checking configuration
+├─ eslint.config.js         # ESLint configuration for JavaScript/TypeScript linting
 ├─ LICENSE                  # License file for the project
 ├─ logo-light.svg           # Light mode logo for the project
 ├─ logo.svg                 # Primary logo for the project
@@ -79,7 +82,7 @@ This project is available under the [MIT](./LICENSE) license. You can learn more
 ## Acknowledgements
 
 - Inspired by modern web application architectures. Special thanks to the open-source community for their valuable contributions.
-- Thanks to the Node.js and Express.js communities for their excellent documentation and support. Special thanks to the Prisma team for creating an amazing ORM. 
+- Thanks to the Node.js and Express.js communities for their excellent documentation and support. Special thanks to the Prisma team for creating an amazing ORM.
 
 ## Contact
 
