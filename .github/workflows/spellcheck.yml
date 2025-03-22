@@ -1,4 +1,4 @@
-name: Spell Check with cspell
+name: Spell Check
 
 on:
   push:
