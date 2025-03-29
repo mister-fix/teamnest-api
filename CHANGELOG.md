@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2023-03-29 (Initial Project Release)
+
 ### Added
 
 - **GitHub Actions**: Added `.github/workflows/commitlint.yml` for commit message linting.
@@ -34,4 +36,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `tsconfig.json` for TypeScript configuration.
   - `nodemon.json` for development workflow automation.
 
-[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/initial-commit...HEAD
+[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/mister-fix/teamnest-api/releases/tags/v0.1.0
