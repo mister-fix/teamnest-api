@@ -1,0 +1,63 @@
+{
+	"compilerOptions": {
+		/* Visit https://aka.ms/tsconfig to read more about this file */
+
+		/* Projects */
+		// "incremental": true,
+		// "tsBuildInfoFile": "./.tsbuildinfo",
+
+		/* Language and Environment */
+		"target": "ES2022",
+		"lib": ["ES2022"],
+		"moduleDetection": "force",
+
+		/* Modules */
+		"module": "NodeNext",
+		"rootDir": "./",
+		"moduleResolution": "NodeNext",
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"resolveJsonModule": true,
+		"types": ["node"],
+
+		/* JavaScript Support */
+		"allowJs": true,
+
+		/* Emit */
+		// "declaration": true,
+		// "declarationMap": true,
+		"sourceMap": true,
+		"outDir": "dist",
+		// "removeComments": true,
+
+		/* Interop Constraints */
+		// "isolatedModules": true,
+		// "verbatimModuleSyntax": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+
+		/* Type Checking */
+		"strict": true /* Enable all strict type-checking options. */,
+		"noImplicitAny": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
+		"noUncheckedSideEffectImports": true,
+		"noImplicitOverride": true,
+		"typeRoots": ["./node_modules/@types"],
+
+		/* Completeness */
+		"skipLibCheck": true,
+
+		/* Plugins */
+		"plugins": [{ "transform": "typescript-transform-paths" }]
+	},
+	"ts-node": {
+		"require": ["tsconfig-paths/register"]
+	},
+	"include": ["config/**/*", "index.ts", "src/**/*"],
+	"exclude": ["node_modules", "dist", "logs"]
+}
