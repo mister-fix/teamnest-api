@@ -6,14 +6,18 @@ jobs:
   commitlint:
     runs-on: ubuntu-22.04
     steps:
-      - name: Setup Node.js
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Install commitlint
-        run: |
-          npm install @commitlint/config-conventional @commitlint/cli conventional-changelog-conventionalcommits
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Print versions
         run: |
