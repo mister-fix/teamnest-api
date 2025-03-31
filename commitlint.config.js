@@ -10,6 +10,7 @@ import conventional from "@commitlint/config-conventional";
 // Extract the list of conventional commit types
 const conventionalTypes = conventional.rules["type-enum"][2];
 
+// Configuration
 const Configuration = {
 	/**
 	 * Resolve and load @commitlint/config-conventional from node_modules.
@@ -26,18 +27,10 @@ const Configuration = {
 	 */
 	rules: {
 		"type-enum": [2, "always", [...conventionalTypes, "wip"]],
-		"body-max-line-length": [2, "always", 100], // Limit body lines to 100 characters
+		"body-max-line-length": [2, "always", 100],
 	},
 	/**
-	 * Array of functions that return true if commitlint should ignore the given message.
-	 * Given array is merged with predefined functions, which consist of matchers like:
-	 *
-	 * - 'Merge pull request', 'Merge X into Y' or 'Merge branch X'
-	 * - 'Revert X'
-	 * - 'v1.2.3' (ie semver matcher)
-	 * - 'Automatic merge X' or 'Auto-merged X into Y'
-	 *
-	 * To see full list, check https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/is-ignored/src/defaults.ts.
+	 * Array of functions that return true if commitlint should ignore the given message. To see full list, check https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/is-ignored/src/defaults.ts.
 	 * To disable those ignores and run rules always, set `defaultIgnores: false` as shown below.
 	 */
 	ignores: [(commit) => commit === ""],
