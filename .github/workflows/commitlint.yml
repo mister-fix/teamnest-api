@@ -13,8 +13,7 @@ jobs:
 
       - name: Install commitlint
         run: |
-          npm install conventional-changelog-conventionalcommits
-          npm install commitlint@latest
+          npm install @commitlint/config-conventional @commitlint/cli conventional-changelog-conventionalcommits
 
       - name: Print versions
         run: |
