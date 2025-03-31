@@ -1,0 +1,7 @@
+pids
+jscoverage
+wscript
+stylelintcache
+nuxt
+choosealicense
+rxaviers
