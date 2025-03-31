@@ -28,6 +28,7 @@
 		"@commitlint/config-conventional": "^19.8.0",
 		"@commitlint/format": "^19.8.0",
 		"@cspell/dict-filetypes": "^3.0.11",
+		"conventional-changelog-conventionalcommits": "7.0.2",
 		"cspell": "^8.18.1",
 		"cspell-dictionary": "^8.18.1",
 		"husky": "^9.1.7"
