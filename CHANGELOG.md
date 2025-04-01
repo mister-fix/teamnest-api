@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -7,7 +9,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
+### 2024-04-01 (Further Project Configurations)
+
+#### Added
+
+- **Commitlint Enhancements**:
+  - New commit type `deps` for dependency-related commits.
+  - Interactive prompt with emoji support and detailed descriptions.
+  - Footer validation rules (`footer-max-line-length`, `footer-leading-blank`).
+  - Custom ignore patterns for `WIP:` and `[skip ci]` commits.
+- `.github/settings.yml`: Added command to auto-delete logs from action runs after 90 days.
+- `.github/workflows/lint.yml`: Added to automate ESLint and Prettier checks on the repository.
+- `.husky/pre-commit`: Added to lint, format, and spell check staged files.
+- `.prettierignore` and `.prettierrc` for Prettier configuration.
+- `eslint.config.js`: Added ESLint configuration for code problem and syntax checking.
+- Lint and formatting scripts in the `package.json` file.
+- Lint-staged configuration in `package.json` file.
+
+#### Changed
+
+- Updated project terms dictionary to include 'ianvs' (`.cspell/project-terms.txt`).
+- Formatted README, CHANGELOG, spell check and commitlint workflows with Prettier.
+- Updated project structure in `README.md` to include ESLint and Prettier files.
+- **Stricter validation rules**:
+  - Enforced lowercase for types and scopes (`type-case`, `scope-case`).
+  - Banned specific subject cases (`sentence-case`, `pascal-case`, etc.).
+  - Added warning-level enforcement for blank lines in body/footer.
+- Improved help URL and TypeScript support via JSDoc.
+
+### Fixed
+
+- [Unreleased] link in this CHANGELOG file.
+
+### 2024-03-31 (Initial Project Setup)
+
+#### Added
 
 - `.cspell/dependency-names.txt`: Added custom CSpell dictionary with list of dependency names.
 - `.cspell/project-terms.txt`: Added custom CSpell dictionary with project terms.
@@ -28,18 +64,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `package.json`: Added project metadata, installed development dependencies, and various scripts.
 - `README.md`: Added to provide an overview of the project.
 
-### Changed
+#### Changed
 
 - Updated `.npmrc` settings.
 - Commented out `omit = dev` setting in `.npmrc` file to fix empty node_modules folder on `npm install`.
 
-### Fixed
+#### Fixed
 
 - Fixed Commitlint workflow by ensuring proper installation of required dependencies.
 - Installed missing dependencies for Commitlint (`package.json`, `package-lock.json`).
 
-### Refactor
+#### Refactor
 
 - Commitlint configuration file to adhere to ESM syntax.
 
-[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/initial-commit...HEAD
+[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/main%40%7B1day%7D...HEAD
