@@ -28,4 +28,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `package.json`: Added project metadata, installed development dependencies, and various scripts.
 - `README.md`: Added to provide an overview of the project.
 
+### Changed
+
+- Updated `.npmrc` settings.
+- Commented out `omit = dev` setting in `.npmrc` file to fix empty node_modules folder on `npm install`.
+
+### Fixed
+
+- Fixed Commitlint workflow by ensuring proper installation of required dependencies.
+- Installed missing dependencies for Commitlint (`package.json`, `package-lock.json`).
+
+### Refactor
+
+- Commitlint configuration file to adhere to ESM syntax.
+
 [Unreleased]: https://github.com/mister-fix/teamnest-api/compare/initial-commit...HEAD
