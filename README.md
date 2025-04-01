@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # Teamnest API
 
 ![license](https://img.shields.io/github/license/mister-fix/teamnest-api?color=blue)
@@ -22,9 +24,12 @@ teamnest-api/
 ├─ .gitattributes             # Git settings for handling file types
 ├─ .gitignore                 # Ignore files in Git
 ├─ .npmrc                     # Configuration for npm CLI
+├─ .prettierignore            # Ignore files for Prettier
+├─ .prettierrc                # Prettier configuration for code formatting
 ├─ CHANGELOG.md               # Project changelog
 ├─ commitlint.config.js       # Commit message linting rules
 ├─ cspell.json                # Custom spell-checking configuration
+├─ eslint.config.js           # ESLint configuration for source code linting
 ├─ LICENSE                    # Project license
 ├─ logo-light.svg             # Light mode logo for the project
 ├─ logo.svg                   # Primary logo for the project
