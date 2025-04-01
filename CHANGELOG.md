@@ -66,5 +66,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Commitlint configuration file to adhere to ESM syntax.
 
-[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/config/stable...HEAD
+[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/main%40%7B1day%7D...config/stable
 [config/stable]: https://github.com/mister-fix/teamnest-api/releases/tag/config/stable
