@@ -2,58 +2,116 @@
  * Commitlint main configuration file.
  * For a detailed explanation regarding each configuration property, visit:
  * https://commitlint.js.org/reference/configuration.html.
+ *
+ * @format
  */
 
-// Import default commit types from @commitlint/config-conventional
-import conventional from "@commitlint/config-conventional";
+import conventional from '@commitlint/config-conventional';
 
 // Extract the list of conventional commit types
-const conventionalTypes = conventional.rules["type-enum"][2];
+const conventionalTypes = conventional.rules['type-enum'][2];
 
-// Configuration
+/** @type {import('@commitlint/types').UserConfig} */
 const Configuration = {
+	// Inherit standard rules from @commitlint/config-conventional
+	extends: ['@commitlint/config-conventional'],
+
+	// Use the default formatter for error messages
+	formatter: '@commitlint/format',
+
 	/**
-	 * Resolve and load @commitlint/config-conventional from node_modules.
-	 * Referenced packages must be installed
-	 */
-	extends: ["@commitlint/config-conventional"],
-	/**
-	 * Resolve and load @commitlint/format from node_modules.
-	 * Referenced packages must be installed
-	 */
-	formatter: "@commitlint/format",
-	/**
-	 * Any rules defined here will override rules from @commitlint/config-conventional
+	 * Rule overrides and extensions:
+	 * [0] = Disabled, [1] = Warning, [2] = Error
+	 * 'always'|'never' = Rule enforcement condition
 	 */
 	rules: {
-		"type-enum": [2, "always", [...conventionalTypes, "wip"]],
-		"body-max-line-length": [2, "always", 100],
+		// Type rules
+		'type-enum': [2, 'always', [...conventionalTypes, 'wip', 'deps']],
+		'type-case': [2, 'always', 'lower-case'],
+		'type-empty': [2, 'never'],
+
+		// Scope rules
+		'scope-case': [2, 'always', 'lower-case'],
+
+		// Subject rules
+		'subject-case': [
+			2,
+			'never',
+			['sentence-case', 'start-case', 'pascal-case', 'upper-case'],
+		],
+		'subject-empty': [2, 'never'],
+		'subject-full-stop': [2, 'never', '.'],
+
+		// Body rules
+		'body-max-line-length': [2, 'always', 100],
+		'body-leading-blank': [1, 'always'],
+
+		// Footer rules
+		'footer-max-line-length': [2, 'always', 100],
+		'footer-leading-blank': [1, 'always'],
 	},
 	/**
-	 * Array of functions that return true if commitlint should ignore the given message. To see full list, check https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/is-ignored/src/defaults.ts.
-	 * To disable those ignores and run rules always, set `defaultIgnores: false` as shown below.
+	 * Custom ignore patterns (in addition to commitlint's defaults):
+	 * - WIP commits (e.g., "WIP: something in progress")
+	 * - CI-skipping commits (e.g., "[skip ci]")
 	 */
-	ignores: [(commit) => commit === ""],
-	/**
-	 * Whether commitlint uses the default ignore rules.
-	 */
+	ignores: [
+		// Allow temporary work-in-progress commits
+		(commit) => commit.startsWith('WIP:'),
+		// Allow CI-skipping commits
+		(commit) => commit.includes('[skip ci]'),
+	],
+	// Keep commitlint's default ignore patterns
 	defaultIgnores: true,
 	/**
 	 * Custom prompt configs
 	 */
 	prompt: {
-		messages: {},
+		messages: {
+			skip: '(press enter to skip)',
+			max: '(%d max chars)',
+			min: '(%d min chars)',
+		},
 		questions: {
 			type: {
-				description: "please input type:",
+				description: 'Select commit type:',
+				enum: {
+					feat: {
+						description: 'A new feature',
+						title: 'Features',
+						emoji: '✨',
+					},
+					fix: {
+						description: 'A bug fix',
+						title: 'Bug Fixes',
+						emoji: '🐛',
+					},
+					// ... other types can be added here
+				},
+			},
+			scope: {
+				description: 'What is the scope of this change?',
+			},
+			subject: {
+				description: 'Write a short, imperative tense description:',
+			},
+			body: {
+				description: 'Provide a longer description (optional):',
+			},
+			isBreaking: {
+				description: 'Are there any breaking changes?',
+			},
+			breakingBody: {
+				description: 'Describe the breaking changes:',
+			},
+			footer: {
+				description: 'List any issues closed (e.g., "Closes #123"):',
 			},
 		},
 	},
-	/**
-	 * Custom URL to show upon failure.
-	 */
+	// Help URL shown when validation fails
 	helpUrl:
-		"https://github.com/conventional-changelog/commitlint/#what-is-commitlint",
+		'https://github.com/conventional-changelog/commitlint/#what-is-commitlint',
 };
 
 export default Configuration;
