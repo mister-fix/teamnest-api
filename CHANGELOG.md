@@ -9,6 +9,56 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 🚀 Enhancements
+
+- **Project Structure**:
+  - Added new `src/` directory with organized architecture:
+    - `config/`: Express-specific middleware configurations (Helmet, Cors, etc.).
+    - `controllers/`: Route controllers.
+    - `middleware/`: Custom middleware (error handling, etc.).
+    - `routers/`: Route definitions.
+    - `services/`: Business logic.
+    - `utils/`: Utility functions.
+  - Introduced `config/` directory for environment-based configurations (`default.js`, `production.js`).
+  - Created `scripts/` directory for build and loader scripts.
+  - Added `.vscode/` settings (`extensions.json`).
+
+### ✨ Features
+
+- **Added TypeScript support**:
+  - Introduced `tsconfig.json` and `tsconfig.lint.json`.
+  - Configured `index.ts` as the main application entrypoint.
+  - Added Express initialization in `src/app.ts`.
+- **Introduced environment configuration files**:
+  - `.env.example` for environment variable references.
+  - `config/default.js` and `config/production.js` for environment settings.
+
+### 📦 Dependencies
+
+- **Added runtime dependencies**:
+  - `compression`, `config`, `cors`, `dotenv`, `express`, `express-rate-limit`, `helmet`, `morgan`, `ms`, `pretty-ms`.
+- **Added TypeScript type definitions**:
+  - `@types/compression`, `@types/config`, `@types/cors`, `@types/express`, `@types/helmet`, `@types/morgan`, and `@types/node`.
+- **Added development tools**:
+  - `nodemon` for automatic restarts.
+  - `ts-node`, `tsx`, `ts-patch`, `tsc-alias`, and `tsconfig-paths` for improved TypeScript support.
+
+### 🛠️ Configuration Updates
+
+- **Updated `package.json`**:
+  - Specified `index.ts` as the main entrypoint (`"main": "index.ts"`).
+  - Added `build`, `typecheck`, `validate`, `dev`, and `start` scripts.
+  - Enhanced `lint-staged` to support TypeScript (`tsc --noEmit`).
+- Added `nodemon.json` for development environment settings.
+
+### 🔃 Changes
+
+- **Updated linting & formatting**:
+  - Updated ESLint configuration to support TypeScript.
+  - Disabled spacing in import groups enforcement in ESLint (leave functionality to Prettier).
+  - Added `@cspell/dict-node`, `@cspell/dict-typescript` dictionaries in the `cspell.json` file.
+  - Added project terms to corresponding CSpell dictionary (`.cspell/project-terms.txt`).
+
 ## [config/stable] - 2024-04-01
 
 ### Added
