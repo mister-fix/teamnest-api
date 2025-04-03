@@ -24,6 +24,18 @@ export default defineConfig([
 		},
 	},
 
+	// TypeScript-specific config
+	{
+		files: ['**/*.ts'],
+		languageOptions: {
+			parser: tseslint.parser,
+			parserOptions: { project: './tsconfig.json' },
+		},
+		plugins: {
+			'@typescript-eslint': tseslint.plugin,
+		},
+	},
+
 	{
 		files: ['**/*.{js,mjs,cjs,ts}'],
 		plugins: {
@@ -43,7 +55,10 @@ export default defineConfig([
 					extensions: ['.js', '.cjs', '.mjs', '.ts', '.json'],
 				},
 				alias: {
-					map: [['@', './src']],
+					map: [
+						['@', '.'],
+						['@/src', './src'],
+					],
 					extensions: ['.js', '.cjs', '.mjs', '.ts', '.json'],
 				},
 			},
@@ -82,7 +97,7 @@ export default defineConfig([
 						'sibling',
 						'index',
 					],
-					'newlines-between': 'always',
+					'newlines-between': 'ignore',
 					alphabetize: { caseInsensitive: true },
 					pathGroups: [
 						{
@@ -183,7 +198,12 @@ export default defineConfig([
 	{
 		plugins: { '@cspell': cspellPlugin },
 		rules: {
-			'@cspell/spellchecker': ['warn', {}],
+			'@cspell/spellchecker': [
+				'warn',
+				{
+					configFile: './cspell.json',
+				},
+			],
 		},
 	},
 
