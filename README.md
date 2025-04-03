@@ -20,7 +20,12 @@ teamnest-api/
 ├─ .cspell/                   # Custom CSpell dictionaries
 ├─ .github/                   # GitHub configurations (Actions workflows, commit linting)
 ├─ .husky/                    # Husky hooks for Git (e.g., pre-commit, pre-push)
+├─ .vscode/                   # VSCode settings (extensions, workspace configs)
+├─ config/                    # Application configuration using 'config' npm package
+├─ scripts/                   # Custom scripts (build, deployment automation)
+├─ src/                       # Source code for the API
 ├─ .editorconfig              # Code style consistency across editors
+├─ .env.example               # Example environment variables
 ├─ .gitattributes             # Git settings for handling file types
 ├─ .gitignore                 # Ignore files in Git
 ├─ .npmrc                     # Configuration for npm CLI
@@ -30,12 +35,16 @@ teamnest-api/
 ├─ commitlint.config.js       # Commit message linting rules
 ├─ cspell.json                # Custom spell-checking configuration
 ├─ eslint.config.js           # ESLint configuration for source code linting
+├─ index.ts                   # Main entry point for the API
 ├─ LICENSE                    # Project license
 ├─ logo-light.svg             # Light mode logo for the project
 ├─ logo.svg                   # Primary logo for the project
+├─ nodemon.json               # Hot-reloading configuration for development
 ├─ package-lock.json          # Locked npm dependencies
 ├─ package.json               # Project metadata and dependencies
 ├─ README.md                  # Project documentation
+├─ tsconfig.json              # TypeScript compiler configuration
+└─ tsconfig.lint.json         # Specialized config for lint-staged type checking
 ```
 
 ## ✏️ Author
