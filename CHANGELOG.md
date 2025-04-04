@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2025-04-04
+
 ### 🚀 Enhancements
 
 - **Project Structure**:
@@ -116,5 +118,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Commitlint configuration file to adhere to ESM syntax.
 
-[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/main%40%7B1day%7D...config/stable
+[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/mister-fix/teamnest-api/compare/config/stable...v0.1.0
 [config/stable]: https://github.com/mister-fix/teamnest-api/releases/tag/config/stable
