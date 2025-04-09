@@ -1,0 +1,46 @@
+{
+	"version": "0.2",
+	"ignorePaths": [
+		"node_modules",
+		"dist",
+		"out",
+		"logs",
+		"coverage",
+		".git",
+		".husky/_",
+		".vscode/",
+		".env",
+		".env.example"
+	],
+	"languageSettings": [
+		{
+			"languageId": "*",
+			"locale": "en-US"
+		}
+	],
+	"dictionaries": [
+		"npm",
+		"node",
+		"javascript",
+		"typescript",
+		"cspell-dictionary",
+		"dependency-names",
+		"project-terms"
+	],
+	"dictionaryDefinitions": [
+		{
+			"name": "dependency-names",
+			"path": "./.cspell/dependency-names.txt",
+			"addWords": true
+		},
+		{
+			"name": "project-terms",
+			"path": "./.cspell/project-terms.txt",
+			"addWords": true
+		}
+	],
+	"files": ["*.{txt,md,json,js,cjs,mjs,ts,yml,yaml}"],
+	"words": ["API"],
+	"ignoreWords": ["teamnest", "Mwingira"],
+	"import": ["@cspell/dict-filetypes/cspell-ext.json"]
+}
