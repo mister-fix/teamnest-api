@@ -15,13 +15,20 @@ The **Teamnest API** is the backend for **Teamnest**, a staff and task managemen
 
 ```ASCII
 teamnest-api/
+├─ .cspell/                   # Custom CSpell dictionaries
+├─ .husky/                    # Husky hooks for Git (e.g., pre-commit, pre-push)
 ├─ .editorconfig              # Code style consistency across different editors/IDEs
 ├─ .gitattributes             # Git settings for end-of-line handling, diffs, etc.
 ├─ .gitignore                 # Specifies intentionally untracked files to ignore in Git
+├─ .npmrc                     # Configuration for npm CLI behavior
 ├─ CHANGELOG.md               # Project changelog with version history
+├─ commitlint.config.js       # Commit message linting rules (used with Husky)
+├─ cspell.json                # Custom spell-checking configuration (CSpell)
 ├─ LICENSE                    # Project license (e.g., MIT)
 ├─ logo-light.svg             # Light mode version of the project logo
 ├─ logo.svg                   # Primary logo for the project
+├─ package-lock.json          # Locked npm dependency versions for reproducible installs
+├─ package.json               # Project metadata, scripts, and dependency definitions
 └─ README.md                  # Project overview, setup instructions, and documentation
 ```
 
