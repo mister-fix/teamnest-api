@@ -1,0 +1,35 @@
+{
+	"name": "teamnest-api",
+	"version": "0.0.0",
+	"private": true,
+	"description": "A secure and efficient staff and task management API for the Teamnest project.",
+	"homepage": "https://github.com/mister-fix/teamnest-api#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mister-fix/teamnest-api.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mister-fix/teamnest-api/issues"
+	},
+	"license": "MIT",
+	"keywords": [],
+	"author": "@mister-fix (https://github.com/mister-fix/)",
+	"engines": {
+		"node": ">=18",
+		"npm": ">=9"
+	},
+	"type": "module",
+	"scripts": {
+		"prepare": "husky",
+		"lint:sc": "cspell ** --dot"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.8.0",
+		"@commitlint/config-conventional": "^19.8.0",
+		"@commitlint/format": "^19.8.0",
+		"@cspell/dict-filetypes": "^3.0.11",
+		"cspell": "^8.18.1",
+		"cspell-dictionary": "^8.18.1",
+		"husky": "^9.1.7"
+	}
+}
