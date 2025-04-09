@@ -1,0 +1,4 @@
+# @format
+
+# .github/settings.yml (or repo Settings → Actions → General)
+run-retention-days: 90 # Auto-deletes logs after 90 days
