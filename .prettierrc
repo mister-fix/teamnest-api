@@ -17,19 +17,6 @@
   "proseWrap": "preserve",
   "embeddedLanguageFormatting": "off",
   "singleAttributePerLine": false,
-  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
-	"importOrder": [
-    "^node:.*$",
-		"^[a-zA-Z0-9].*$",
-		"^config$",
-		"",
-		"^@/.*$",
-		"^\\.\\./.*$",
-		"^\\./.*$",
-		"^\\./?$"
-  ],
-  "importOrderParserPlugins": ["typescript"],
-  "importOrderTypeScriptVersion": "5.0.0",
   "overrides": [
 		{ "files": "*.{cmp,page}", "options": { "parser": "html" } },
 		{ "files": "*.hbs", "options": { "printWidth": 120 } },
