@@ -21,15 +21,46 @@
 	"type": "module",
 	"scripts": {
 		"prepare": "husky",
-		"lint:sc": "cspell ** --dot"
+		"lint": "eslint .",
+		"lint:all": "npm-run-all --parallel lint spellcheck",
+		"lint:fix": "eslint --fix .",
+		"spellcheck": "cspell ** --dot",
+		"prettier:check": "prettier --check .",
+		"prettier:fix": "prettier --write .",
+		"format": "npm run lint:fix && npm run prettier:fix",
+		"validate": "npm run lint && npm run prettier:check"
+	},
+	"lint-staged": {
+		"*.{js,cjs,mjs}": [
+			"eslint --fix --cache --cache-location node_modules/.cache/eslint",
+			"prettier --write"
+		],
+		"**/*.{json,jsonc,md,yml,yaml}": [
+			"prettier --write"
+		],
+		"!**/.prettierrc": []
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.8.0",
 		"@commitlint/config-conventional": "^19.8.0",
 		"@commitlint/format": "^19.8.0",
 		"@cspell/dict-filetypes": "^3.0.11",
+		"@eslint/js": "^9.23.0",
+		"@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+		"conventional-changelog-conventionalcommits": "^7.0.2",
 		"cspell": "^8.18.1",
 		"cspell-dictionary": "^8.18.1",
-		"husky": "^9.1.7"
+		"eslint": "^9.23.0",
+		"eslint-config-prettier": "^10.1.1",
+		"eslint-import-resolver-alias": "^1.1.2",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-prettier": "^5.2.5",
+		"eslint-plugin-unused-imports": "^4.1.4",
+		"globals": "^11.12.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.5.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^3.5.3",
+		"pretty-quick": "^4.1.1"
 	}
 }
