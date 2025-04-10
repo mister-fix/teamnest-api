@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # <img src="./logo.svg#gh-light-mode-only" alt="teamnest-api logo light" height="40" /><img src="./logo-light.svg#gh-dark-mode-only" alt="teamnest-api logo light" height="40" />
 
 ![license](https://img.shields.io/github/license/mister-fix/teamnest-api?color=blue)
