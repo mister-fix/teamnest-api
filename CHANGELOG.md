@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -24,5 +26,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `cspell.json`: Configuration for code and documentation spell checking.
 - `.cspell/dependency-names.txt`: Dictionary with names of dependencies that CSpell doesn't recognize.
 - `.cspell/project-terms.txt`: Dictionary with project specific terms.
+- `.github/workflows/commitlint.yml`: Added workflow for pushed commit message linting.
+- `.github/workflows/spellcheck.yml`: Added workflow to check for spelling errors on pushed commits.
+- `.github/workflows/lint.yml`: Added to automate ESLint and Prettier checks on the repository.
+- `.github/settings.yml`: Added command to auto-delete logs from action runs after 90 days.
+- `.prettierignore` and `.prettierrc` for Prettier configuration.
+- `eslint.config.js`: Added ESLint configuration for code problem and syntax checking.
 
 [Unreleased]: https://github.com/mister-fix/teamnest-api/compare/main%40%7B1day%7D...HEAD
