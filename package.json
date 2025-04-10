@@ -1,6 +1,6 @@
 {
 	"name": "teamnest-api",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"private": true,
 	"description": "A secure and efficient staff and task management API for the Teamnest project.",
 	"homepage": "https://github.com/mister-fix/teamnest-api#readme",
@@ -12,10 +12,17 @@
 		"url": "https://github.com/mister-fix/teamnest-api/issues"
 	},
 	"license": "MIT",
-	"keywords": [],
+	"keywords": [
+		"staff management",
+		"task management",
+		"project management",
+		"Node.js",
+		"Express.js",
+		"API",
+		"REST API"
+	],
 	"author": "@mister-fix (https://github.com/mister-fix/)",
 	"engines": {
-		"node": ">=18",
 		"npm": ">=9"
 	},
 	"type": "module",
@@ -46,7 +53,6 @@
 		"@commitlint/format": "^19.8.0",
 		"@cspell/dict-filetypes": "^3.0.11",
 		"@eslint/js": "^9.23.0",
-		"@ianvs/prettier-plugin-sort-imports": "^4.4.1",
 		"conventional-changelog-conventionalcommits": "^7.0.2",
 		"cspell": "^8.18.1",
 		"cspell-dictionary": "^8.18.1",
