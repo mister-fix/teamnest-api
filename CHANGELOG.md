@@ -4,10 +4,40 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Added
+
+- Added `.vscode/` settings (`extensions.json`).
+- Introduced `config/` directory for environment-based configurations (`default.js`, `production.js`).
+- TypeScript configuration file (`tsconfig.json`).
+- Created `scripts/` directory for build and loader scripts.
+- Added `nodemon.json` for development environment settings and server hot-reloading.
+- Added node version manager configuration file (`.nvmrc`).
+- Imported additional dictionaries for TypeScript and Node in the CSpell configuration file (`cspell.json`).
+- Configured `index.ts` as the main application entrypoint.
+- Added Express initialization in `src/app.ts`.
+- Added runtime dependencies:
+  - `compression`, `config`, `cors`, `dotenv`, `express`, `express-rate-limit`, `helmet`, `morgan`, `ms`, `pretty-ms`,
+    and `tsconfig-paths`.
+- Added development tools:
+  - `nodemon` for automatic server restarts during development.
+  - `ts-node`, `tsx`, `ts-patch`, `tsc-alias`, and `typescript-transform-paths` for improved TypeScript support.
+- Added TypeScript type definitions:
+  - `@types/compression`, `@types/config`, `@types/cors`, `@types/express`, `@types/node`, `@types/morgan`,
+    `@types/helmet`, and `@types/http-errors`.
+
+### Changed
+
+- Updated ESLint and Prettier configurations to support TypeScript.
+- Updated project structure to include new files and folders (`tsconfig.json`, `nodemon.json`, `index.ts`, etc.).
+- Formatted Commitlint configuration file, spell check and commitlint workflows with Prettier.
+- Specified `dist/index.js` as the main entrypoint in the `package.json` file.
+- Updated `lint-staged` configuration in the `package.json` file to include TypeScript files.
+- Added `frameguard`, `pjson`, and `hsts` to project terms dictionary (`.cspell/project-terms.txt`).
 
 ## [0.1.0] - 2025-04-10
 
