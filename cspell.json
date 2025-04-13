@@ -42,5 +42,9 @@
 	"files": ["*.{txt,md,json,js,cjs,mjs,ts,yml,yaml}"],
 	"words": ["API"],
 	"ignoreWords": ["teamnest", "Mwingira"],
-	"import": ["@cspell/dict-filetypes/cspell-ext.json"]
+	"import": [
+		"@cspell/dict-filetypes/cspell-ext.json",
+		"@cspell/dict-typescript/cspell-ext.json",
+		"@cspell/dict-node/cspell-ext.json"
+	]
 }
