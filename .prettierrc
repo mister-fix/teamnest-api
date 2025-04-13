@@ -23,7 +23,6 @@
 		"prettier-plugin-jsdoc"
 	],
 	"importOrder": [
-		"",
     "<TYPES>^(node:)",
     "<TYPES>",
     "<TYPES>^[.]",
