@@ -1,6 +1,6 @@
 /**
- * Commitlint main configuration file.
- * For a detailed explanation regarding each configuration property, visit:
+ * Commitlint main configuration file. For a detailed explanation regarding each
+ * configuration property, visit:
  * https://commitlint.js.org/reference/configuration.html.
  *
  * @format
@@ -12,10 +12,7 @@ import conventional from '@commitlint/config-conventional';
 // Extract the list of conventional commit types
 const conventionalTypes = conventional.rules['type-enum'][2];
 
-/**
- * Configuration
- * @type { import('@commitlint/types').UserConfig }
- */
+/** @type {type name = import('@commitlint/types').UserConfig} */
 const Configuration = {
 	// Inherit standard rules from @commitlint/config-conventional
 	extends: ['@commitlint/config-conventional'],
