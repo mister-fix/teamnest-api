@@ -1,0 +1,79 @@
+{
+	"compilerOptions": {
+		/* Visit https://aka.ms/tsconfig to read more about this file */
+
+		/* Language and Environment */
+		"target": "ESNext",
+		"lib": ["ESNext"],
+		"moduleDetection": "force",
+
+		/* Modules */
+		"module": "ESNext",
+		"rootDir": "./",
+		"moduleResolution": "node",
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["./*"],
+			"@/src/*": ["./src/*"]
+		},
+		// "rootDirs": [],
+		"resolveJsonModule": true,
+		"typeRoots": ["./node_modules/@types"],
+		"types": ["node", "express"],
+
+		/* JavaScript Support */
+		"allowJs": true,
+
+		/* Emit */
+		"noEmit": false,
+		"sourceMap": true,
+		"outDir": "dist",
+		"removeComments": true,
+		"newLine": "lf",
+
+		/* Interop Constraints */
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"verbatimModuleSyntax": false,
+		"forceConsistentCasingInFileNames": true,
+
+		/* Type Checking */
+		"strict": true,
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
+		"noUncheckedSideEffectImports": true,
+		"noImplicitOverride": true,
+
+		/* Completeness */
+		"skipLibCheck": true,
+		"importHelpers": true,
+
+		/* Plugins */
+		"plugins": [
+			{
+				"transform": "typescript-transform-paths",
+				"before": true,
+				"afterDeclarations": true
+			}
+		]
+	},
+	"ts-node": {
+		"esm": true,
+		"experimentalSpecifierResolution": "node",
+		"require": ["tsconfig-paths/register"],
+		"transpileOnly": true
+	},
+	"tsc-alias": {
+		"verbose": false,
+		"resolveFullPaths": true,
+		"fileExtensions": {
+			"inputGlob": "{js,ts}",
+			"outputCheck": ["js", "json", "cjs", "mjs"]
+		}
+	},
+	"include": ["index.ts", "prisma/**/*", "src/**/*"],
+	"exclude": ["node_modules", "dist"]
+}
