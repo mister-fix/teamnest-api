@@ -9,35 +9,59 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.2.0] - 2025-04-13
+
 ### Added
 
-- Added `.vscode/` settings (`extensions.json`).
-- Introduced `config/` directory for environment-based configurations (`default.js`, `production.js`).
-- TypeScript configuration file (`tsconfig.json`).
-- Created `scripts/` directory for build and loader scripts.
-- Added `nodemon.json` for development environment settings and server hot-reloading.
-- Added node version manager configuration file (`.nvmrc`).
-- Imported additional dictionaries for TypeScript and Node in the CSpell configuration file (`cspell.json`).
-- Configured `index.ts` as the main application entrypoint.
-- Added Express initialization in `src/app.ts`.
-- Added runtime dependencies:
-  - `compression`, `config`, `cors`, `dotenv`, `express`, `express-rate-limit`, `helmet`, `morgan`, `ms`, `pretty-ms`,
-    and `tsconfig-paths`.
-- Added development tools:
-  - `nodemon` for automatic server restarts during development.
-  - `ts-node`, `tsx`, `ts-patch`, `tsc-alias`, and `typescript-transform-paths` for improved TypeScript support.
-- Added TypeScript type definitions:
-  - `@types/compression`, `@types/config`, `@types/cors`, `@types/express`, `@types/node`, `@types/morgan`,
-    `@types/helmet`, and `@types/http-errors`.
+- **Project Structure**:
+  - Added new `src/` directory with organized architecture:
+    - `config/`: Express-specific middleware configurations (Helmet, Cors, etc.).
+    - `controllers/`: Route controllers.
+    - `middleware/`: Custom middleware (error handling, etc.).
+    - `routers/`: Route definitions.
+    - `services/`: Business logic.
+    - `utils/`: Utility functions.
+  - Created `scripts/` directory for build and loader scripts.
+  - Added recommended list of extensions for VSCode (`.vscode/extensions.json`).
+- **Added TypeScript support**:
+  - Introduced `tsconfig.json` and `tsconfig.lint.json`.
+  - Configured `index.ts` as the entrypoint for application development.
+  - Added Express initialization in the `src/` directory configuring the application and server.
+- **Introduced environment configuration files**:
+  - `.env.example` for environment variable references.
+  - `config/default.js` and `config/production.js` for environment settings.
+- **Added runtime dependencies**:
+  - `compression`, `config`, `cors`, `dotenv`, `cross-env`, `express`, `http-errors`, `express-rate-limit`, `helmet`,
+    `morgan`, `ms`, `pretty-ms`.
+- **Added TypeScript type definitions**:
+  - `@types/compression`, `@types/config`, `@types/cors`, `@types/express`, `@types/http-errors`, `@types/morgan`,
+    `@types/node`.
+- **Added development tools**:
+  - `nodemon` for automatic restarts.
+  - `ts-node`, `tsx`, `ts-patch`, `tsc-alias`, and `tsconfig-paths` for improved TypeScript support.
+- Added `nodemon.json` for development environment settings.
 
 ### Changed
 
-- Updated ESLint and Prettier configurations to support TypeScript.
+- **Updated `package.json`**:
+  - Specified `dist/index.js` as the main entrypoint (`"main": "dist/index.js"`).
+  - Added `build`, `dev`, and `start` scripts.
+  - Enhanced `lint-staged` to support TypeScript.
+- **Updated linting & formatting**:
+  - Updated ESLint and Prettier configurations to support TypeScript.
 - Updated project structure to include new files and folders (`tsconfig.json`, `nodemon.json`, `index.ts`, etc.).
 - Formatted Commitlint configuration file, spell check and commitlint workflows with Prettier.
 - Specified `dist/index.js` as the main entrypoint in the `package.json` file.
 - Updated `lint-staged` configuration in the `package.json` file to include TypeScript files.
 - Added `frameguard`, `pjson`, and `hsts` to project terms dictionary (`.cspell/project-terms.txt`).
+
+### Fixed
+
+- N/A (No fixes in this release)
+
+### Removed
+
+- N/A (No removals in this release)
 
 ## [0.1.0] - 2025-04-10
 
@@ -87,5 +111,6 @@ This is the initial release of the Teamnest API project, including foundational 
 
 - N/A (No removals in this release)
 
-[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/mister-fix/teamnest-api/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/mister-fix/teamnest-api/releases/tag/v0.1.0
