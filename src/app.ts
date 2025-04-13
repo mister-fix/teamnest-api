@@ -4,6 +4,7 @@ import compression from 'compression';
 import config from 'config';
 import cors from 'cors';
 import express, { Application, Request } from 'express';
+import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
@@ -30,6 +31,15 @@ export const createApp = () => {
 			filter: (req) => !req.path.includes('health'),
 		})
 	);
+
+	// General rate limiting
+	const limiter = rateLimit({
+		windowMs: 15 * 60 * 1000,
+		max: 10,
+		standardHeaders: 'draft-8',
+		legacyHeaders: false,
+	});
+	app.use(limiter);
 
 	// Body parsing middleware
 	app.use(express.json(expressMiddleware.json));
