@@ -1,0 +1,11 @@
+{
+	"watch": ["index.ts", "config", "src", "scripts"],
+	"ext": "ts,js,json",
+	"exec": "node --loader ./scripts/loader.js --no-warnings=ExperimentalWarning ./index.ts",
+	"env": {
+		"NODE_ENV": "development"
+	},
+	"verbose": false,
+	"legacyWatch": true,
+	"ignore": ["node_modules", "dist", "build", "coverage", "*/**/*.md", "tests/", "src/**/*.test.js"]
+}
