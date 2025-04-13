@@ -15,18 +15,34 @@
 	"experimentalTernaries": true,
 	"experimentalOperatorPosition": "start",
   "proseWrap": "preserve",
-  "embeddedLanguageFormatting": "off",
+  "embeddedLanguageFormatting": "auto",
   "singleAttributePerLine": false,
+	"tsdoc": true,
+  "plugins": [
+		"@ianvs/prettier-plugin-sort-imports", 
+		"prettier-plugin-jsdoc"
+	],
+	"importOrder": [
+		"",
+    "<TYPES>^(node:)",
+    "<TYPES>",
+    "<TYPES>^[.]",
+    "<BUILTIN_MODULES>",
+    "<THIRD_PARTY_MODULES>",
+		"",
+		"^@/.*$",
+		"^lib/.*$",
+		"",
+    "^[./].*$"
+  ],
+  "importOrderParserPlugins": ["typescript"],
+  "importOrderTypeScriptVersion": "5.0.0",
   "overrides": [
 		{ "files": "*.{cmp,page}", "options": { "parser": "html" } },
 		{ "files": "*.hbs", "options": { "printWidth": 120 } },
 		{ "files": ["*.json", "*.jsonc"], "options": { "printWidth": 100 } },
-		{
-			"files": "*.{yaml,yml}",
-			"options": {
-				"useTabs": false,
-				"tabWidth": 2
-			}
-		}
+		{ "files": "*.{yaml,yml}", "options": { "useTabs": false, "tabWidth": 2, "singleQuote": false, "bracketSpacing": false } },
+		{ "files": "*.txt", "options": { "useTabs": false, "tabWidth": 2, "singleQuote": false, "bracketSpacing": false } },
+		{ "files": "*.md", "options": { "proseWrap": "always", "printWidth": 120, "tabWidth": 2 } }
 	]
 }
