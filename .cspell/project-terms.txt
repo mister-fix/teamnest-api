@@ -6,3 +6,6 @@ rxaviers
 stylelintcache
 wscript
 misterfix
+pjson
+frameguard
+hsts
