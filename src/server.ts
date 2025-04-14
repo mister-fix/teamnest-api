@@ -1,10 +1,10 @@
 /** @format */
 
-import console from 'node:console';
 import { exit } from 'node:process';
 import config from 'config';
 
 import { createApp } from '@/src/app';
+import { logger } from '@/src/utils/logger';
 
 /**
  * Starts the Express server adn sets up listeners for events and graceful
@@ -26,20 +26,20 @@ export const startServer = (): void => {
 
 	// Event: Server starts successfully
 	server.on('listening', () => {
-		console.log(`Starting server in ${env} mode`);
-		console.log(`Server is listening at: ${protocol}://${host}:${port}`);
+		logger.info(`Starting server in ${env} mode`);
+		logger.info(`Server is listening at: ${protocol}://${host}:${port}`);
 
-		if (env === 'development') console.log('Press CTRL+C to stop the server');
+		if (env === 'development') logger.info('Press CTRL+C to stop the server');
 	});
 
 	// Event: Server encounters an error during startup or runtime
 	server.on('error', (err: NodeJS.ErrnoException) => {
-		console.error('Server encountered an error:', err);
+		logger.error('Server encountered an error:', err);
 
 		if (err.code === 'EADDRINUSE') {
-			console.error(`Port ${port} is already in use.`);
-			console.error('1. Terminate the conflicting process, or');
-			console.error('2. Change the port in the server configuration.');
+			logger.error(`Port ${port} is already in use.`);
+			logger.error('1. Terminate the conflicting process, or');
+			logger.error('2. Change the port in the server configuration.');
 		}
 
 		// Exit the process with a failure code
@@ -48,8 +48,8 @@ export const startServer = (): void => {
 
 	//Event: Server is closed
 	server.on('close', () => {
-		console.log('Cleaning up resources...');
-		console.log('Closing remaining connections');
+		logger.info('Cleaning up resources...');
+		logger.info('Closing remaining connections');
 	});
 
 	/**
@@ -60,10 +60,10 @@ export const startServer = (): void => {
 	 * @returns {type name = void}
 	 */
 	const gracefulShutdown = (signal: string): void => {
-		console.warn(`${signal} signal received`);
+		logger.warn(`${signal} signal received`);
 
 		server.close(() => {
-			console.log('Server closed gracefully');
+			logger.info('Server closed gracefully');
 			exit(0);
 		});
 	};
@@ -74,13 +74,13 @@ export const startServer = (): void => {
 
 	// Global handler for: uncaught exceptions
 	process.on('uncaughtException', (err) => {
-		console.error('Uncaught exception:', err);
+		logger.error('Uncaught exception:', err);
 		exit(1);
 	});
 
 	// Global handler for: unhandled promise rejections
 	process.on('unhandledRejection', (reason) => {
-		console.error('Unhandled rejection:', reason);
+		logger.error('Unhandled rejection:', reason);
 		exit(1);
 	});
 };
