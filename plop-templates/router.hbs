@@ -1,0 +1,32 @@
+/**
+	* {{description}}
+	* @module routers/{{name}}
+	* @see {@link https://expressjs.com/|Express}
+	*
+	* @format
+	*/
+
+// Import necessary modules
+import { Router } from 'express';
+
+{{#if controller}}
+// Import controller methods
+{{#each endpoints}}
+import * as controller from './controllers/{{controllerName}}.controller';
+{{/if}}
+
+// Initialize router instance
+const router = Router();
+
+// Endpoints
+{{#if controller}}
+{{#each endpoints}}
+router.{{method}}('{{path}}', /* controller method */);
+{{/each}}
+{{else}}
+// Add routes here
+// ex: router.get('/', handler);
+{{/if}}
+
+// Export router
+export default router;
