@@ -17,6 +17,110 @@ progression, oversee projects, and streamline workflows. This RESTful API powers
 providing secure and scalable endpoints for user authentication, employee management, task delegation, project tracking,
 and more.
 
+## 🚀 Getting Started
+
+Follow the steps below to get Teamnest API up and running on your local machine.
+
+### Prerequisites
+
+To ensure that the API works as intended on your local machine, make sure you have the following services running with
+the recommended versions below:
+
+- [Git](https://git-scm.com/downloads): v2.49.0+
+- [Node.js](https://nodejs.org/en/about/previous-releases): v22.13.1+
+- [npm](https://npmjs.com/package/npm?activeTab=versions): v10.9.2+
+
+### Clone the Repository
+
+Run the following command to clone the repository:
+
+```bash
+git clone https://github.com/mister-fix/teamnest-api.git
+cd teamnest-api
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Configure Variables
+
+Create a `.env` file in the root of the project directory and add the necessary variables for the API to work:
+
+```ini
+HOST=localhost
+PORT=5000
+PROTOCOL=HTTP
+```
+
+Included in the project files is a `.env.example` file that you can use as a baseline for your local `.env` file. The
+example file has all of the variable names needed to run the API, but with dummy values, feel free to change provided
+values to custom values that you want to use for your local installation.
+
+At minimum, your `.env` file must have `HOST`, `PORT`, and `PROTOCOL` variables set in order for the API to start. The
+other variables are needed for once the API is running, such as for authentication, etc.
+
+### Running the API
+
+Run the following command to start the API in development mode:
+
+```bash
+npm run dev
+```
+
+The following will be printed in your terminal indicating that the API has started successfully:
+
+```bash
+> teamnest-api@0.2.0 dev
+> cross-env NODE_ENV=development nodemon
+
+[nodemon] 3.1.9
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): index.ts config\**\* src\**\* scripts\**\*
+[nodemon] watching extensions: ts,js,json
+[nodemon] starting `node --loader ./scripts/loader.js --no-warnings=ExperimentalWarning ./index.ts`
+Starting server in development mode
+Server is listening at: http://localhost:8080
+Press CTRL+C to stop the server
+```
+
+To run the API in production mode, you must first compile the project by running the following command:
+
+```bash
+npm run build
+```
+
+The following will be printed in your terminal indicating that the project build script is running:
+
+```bash
+> teamnest-api@0.2.0 build
+> node ./scripts/build.js
+
+🗑️ Deleting existing dist folder...
+🏗️ Building project...
+```
+
+Once complete, the 'dist' folder will appear in the root project directory with the source code compiled into
+JavaScript.
+
+To start the project run the following command:
+
+```bash
+npm run start
+```
+
+The following will be printed in your terminal indicating that the project has started successfully:
+
+```bash
+> teamnest-api@0.2.0 start
+> cross-env NODE_ENV=production node dist/index.js
+
+Starting server in production mode
+Server is listening at: http://localhost:8080
+```
+
 ## 🏗️ Project Structure
 
 ```ASCII
@@ -48,7 +152,8 @@ teamnest-api/
 ├─ package-lock.json          # Locked npm dependency versions for reproducible installs
 ├─ package.json               # Project metadata, scripts, and dependency definitions
 ├─ README.md                  # Project overview, setup instructions, and documentation
-└─ tsconfig.json              # Base TypeScript configuration for compiling the project
+├─ tsconfig.json              # Base TypeScript configuration for compiling the project
+└─ tsconfig.lint.json         # Extended TS config for type-checking during linting (used by ESLint)
 ```
 
 ## ✏️ Author
