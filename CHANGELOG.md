@@ -10,13 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 - Added [Getting Started](./README.md#-getting-started) section in `README.md` file.
-- Updated project structure in `README.md` file to include added `tsconfig.lint.json` file.
+- Updated project structure in `README.md` to include added `tsconfig.lint.json` and Plop configuration files, as well
+  as the directory for Plop template files (`plop-templates/`).
 - Modified `validate` script in the `package.json` file.
 - Updated `pre-commit` hook to run `typecheck` script on staged TypeScript files.
 - Added custom logging utility built on `winston` and `chalk` (`src/utils/logger.ts`).
 - Added HTTP requests logging middleware (`src/middleware/http-logger.ts`).
 - Replaced Node's built-in console module from use in source code with custom logging utility.
 - Introduced `tsconfig.lint.json` for type-checking TS files during lint-staged runs.
+- Fixed imported type in the `commitlint.config.js` file.
+- Added override for formatting JSDoc import type comments in config files in the `.prettierrc` file.
+- Added Plop configuration file for generating source code files (`plopfile.js`).
+- Added templates folder for use with custom Plop generators (`plop-templates/`).
+- Added terms for Plop in the dependency names dictionary (`.cspell/dependency-names.txt`).
+- Added Plop template files to `.prettierignore` file to exclude them from being formatted with Prettier.
 
 ## [0.2.0] - 2025-04-13
 
