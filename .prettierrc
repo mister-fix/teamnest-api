@@ -17,7 +17,7 @@
   "proseWrap": "preserve",
   "embeddedLanguageFormatting": "auto",
   "singleAttributePerLine": false,
-	"tsdoc": true,
+	"tsdoc": false,
   "plugins": [
 		"@ianvs/prettier-plugin-sort-imports", 
 		"prettier-plugin-jsdoc"
@@ -42,6 +42,7 @@
 		{ "files": ["*.json", "*.jsonc"], "options": { "printWidth": 100 } },
 		{ "files": "*.{yaml,yml}", "options": { "useTabs": false, "tabWidth": 2, "singleQuote": false, "bracketSpacing": false } },
 		{ "files": "*.txt", "options": { "useTabs": false, "tabWidth": 2, "singleQuote": false, "bracketSpacing": false } },
-		{ "files": "*.md", "options": { "proseWrap": "always", "printWidth": 120, "tabWidth": 2 } }
+		{ "files": "*.md", "options": { "proseWrap": "always", "printWidth": 120, "tabWidth": 2 }},
+		{ "files": ["*.config.js", "plopfile.js"], "options": { "plugins": ["@ianvs/prettier-plugin-sort-imports"]}}
 	]
 }
