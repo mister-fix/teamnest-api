@@ -9,21 +9,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-- Added [Getting Started](./README.md#-getting-started) section in `README.md` file.
-- Updated project structure in `README.md` to include added `tsconfig.lint.json` and Plop configuration files, as well
-  as the directory for Plop template files (`plop-templates/`).
-- Modified `validate` script in the `package.json` file.
-- Updated `pre-commit` hook to run `typecheck` script on staged TypeScript files.
-- Added custom logging utility built on `winston` and `chalk` (`src/utils/logger.ts`).
-- Added HTTP requests logging middleware (`src/middleware/http-logger.ts`).
-- Replaced Node's built-in console module from use in source code with custom logging utility.
-- Introduced `tsconfig.lint.json` for type-checking TS files during lint-staged runs.
-- Fixed imported type in the `commitlint.config.js` file.
-- Added override for formatting JSDoc import type comments in config files in the `.prettierrc` file.
-- Added Plop configuration file for generating source code files (`plopfile.js`).
-- Added templates folder for use with custom Plop generators (`plop-templates/`).
-- Added terms for Plop in the dependency names dictionary (`.cspell/dependency-names.txt`).
-- Added Plop template files to `.prettierignore` file to exclude them from being formatted with Prettier.
+## [0.3.0] - 2025-04-14
+
+### Added
+
+- **Documentation**:
+  - Added [Getting Started](./README.md#-getting-started) section in `README.md` file.
+  - Updated project structure in `README.md` to include added `tsconfig.lint.json` and Plop configuration files, as well
+    as the directory for Plop template files (`plop-templates/`).
+- **Configuration & Tooling**:
+  - Introduced `tsconfig.lint.json` for type-checking TypeScript files during lint-staged runs.
+  - Added Plop configuration file for generating source code (`plopfile.js`).
+  - Added Plop template folder (`plop-templates/`) for use with custom generators.
+  - Added override for formatting JSDoc import type comments in config files in `.prettierrc`.
+  - Added terms for Plop in `.cspell/dependency-names.txt`.
+  - Added plop-templates/ to `.prettierignore` to exclude templates from formatting.
+- **Utilities & Middleware**:
+  - Added custom logging utility built on `winston` and `chalk` (`src/utils/logger.ts`).
+  - Added HTTP requests logging middleware (`src/middleware/http-logger.ts`).
+
+### Changed
+
+- Replaced Node's built-in `console` module from use in source code with custom logger.
+- Updated `pre-commit` hook to run `typecheck` on staged TypeScript files.
+- Modified `validate` script in `package.json`.
+
+### Fixed
+
+- Corrected imported type syntax in `commitlint.config.js`.
+
+### Removed
+
+- N/A (No removals in this release)
 
 ## [0.2.0] - 2025-04-13
 
@@ -127,6 +144,7 @@ This is the initial release of the Teamnest API project, including foundational 
 
 - N/A (No removals in this release)
 
-[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/mister-fix/teamnest-api/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/mister-fix/teamnest-api/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/mister-fix/teamnest-api/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/mister-fix/teamnest-api/releases/tag/v0.1.0
