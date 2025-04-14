@@ -12,7 +12,7 @@ import conventional from '@commitlint/config-conventional';
 // Extract the list of conventional commit types
 const conventionalTypes = conventional.rules['type-enum'][2];
 
-/** @type {type name = import('@commitlint/types').UserConfig} */
+/** @type {import('@commitlint/types').UserConfig} */
 const Configuration = {
 	// Inherit standard rules from @commitlint/config-conventional
 	extends: ['@commitlint/config-conventional'],
