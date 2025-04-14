@@ -130,6 +130,7 @@ teamnest-api/
 ├─ .husky/                    # Husky hooks for Git (e.g., pre-commit, pre-push)
 ├─ .vscode/                   # VSCode settings (extensions, workspace configs)
 ├─ config/                    # Application configuration using 'config' npm package
+├─ plop-templates/            # Reusable templates for file and source code generation with Plop
 ├─ scripts/                   # Custom scripts (build, deployment automation)
 ├─ src/                       # Source code for the API (routes, controllers, services, utils)
 ├─ .editorconfig              # Code style consistency across different editors/IDEs
@@ -151,6 +152,7 @@ teamnest-api/
 ├─ nodemon.json               # Nodemon configuration for hot-reloading during development
 ├─ package-lock.json          # Locked npm dependency versions for reproducible installs
 ├─ package.json               # Project metadata, scripts, and dependency definitions
+├─ plopfile.js                # Configuration for Plop code generator (e.g., scaffolding routes/services)
 ├─ README.md                  # Project overview, setup instructions, and documentation
 ├─ tsconfig.json              # Base TypeScript configuration for compiling the project
 └─ tsconfig.lint.json         # Extended TS config for type-checking during linting (used by ESLint)
