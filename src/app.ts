@@ -1,16 +1,15 @@
 /** @format */
 
 import compression from 'compression';
-import config from 'config';
 import cors from 'cors';
 import express, { Application, Request } from 'express';
 import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
-import morgan from 'morgan';
 
 import { corsOptions } from '@/src/libs/cors';
 import { expressMiddleware, expressSettings } from '@/src/libs/express';
 import { errorHandler } from '@/src/middleware/error-handler';
+import { httpLogger } from '@/src/middleware/http-logger';
 import { notFoundHandler } from '@/src/middleware/not-found';
 
 export const createApp = () => {
@@ -46,7 +45,7 @@ export const createApp = () => {
 	app.use(express.urlencoded(expressMiddleware.urlencoded));
 
 	// Logging
-	app.use(morgan(config.get('env') === 'development' ? 'dev' : 'common'));
+	app.use(httpLogger);
 
 	// Health check
 	app.get('/health', (_req, res) => {
