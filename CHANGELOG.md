@@ -9,6 +9,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+- Added [Getting Started](./README.md#-getting-started) section in `README.md` file.
+- Updated project structure in `README.md` file to include added `tsconfig.lint.json` file.
+- Modified `validate` script in the `package.json` file.
+- Updated `pre-commit` hook to run `typecheck` script on staged TypeScript files.
+- Added custom logging utility built on `winston` and `chalk` (`src/utils/logger.ts`).
+- Added HTTP requests logging middleware (`src/middleware/http-logger.ts`).
+- Replaced Node's built-in console module from use in source code with custom logging utility.
+- Introduced `tsconfig.lint.json` for type-checking TS files during lint-staged runs.
+
 ## [0.2.0] - 2025-04-13
 
 ### Added
