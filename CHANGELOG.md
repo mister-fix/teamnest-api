@@ -9,6 +9,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+- Implemented health and readiness check endpoints for API.
+- Removed `prettier-plugin-jsdoc` from Prettier plugins configuration.
+  - Removed override for config files to exclude formatting JSDoc comments.
+- Uninstalled `prettier-plugin-jsdoc` package.
+- Installed and configured JSDoc plugin for ESLint to lint JSDoc comments in source code.
+- Add global API redirect middleware (`src/middleware/api-redirect.ts`).
+- Refactored error and 404 handling middleware into factory function pattern.
+- Refactor `app.ts`:
+  - Modularize middleware and move to factory pattern.
+  - Mounted main API router.
+
 ## [0.3.0] - 2025-04-14
 
 ### Added
