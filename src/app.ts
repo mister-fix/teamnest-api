@@ -1,6 +1,7 @@
 /** @format */
 
 import compression from 'compression';
+import config from 'config';
 import cors from 'cors';
 import express, { Application, Request } from 'express';
 import { rateLimit } from 'express-rate-limit';
@@ -8,13 +9,24 @@ import helmet from 'helmet';
 
 import { corsOptions } from '@/src/libs/cors';
 import { expressMiddleware, expressSettings } from '@/src/libs/express';
-import { errorHandler } from '@/src/middleware/error-handler';
+import { globalRedirect } from '@/src/middleware/api-redirect';
+import { createErrorHandler } from '@/src/middleware/error-handler';
 import { httpLogger } from '@/src/middleware/http-logger';
-import { notFoundHandler } from '@/src/middleware/not-found';
+import { createNotFoundHandler } from '@/src/middleware/not-found';
+import { createMainRouter } from '@/src/routes/index';
+import { logger } from '@/src/utils/logger';
 
 export const createApp = () => {
-	// Create an instance of the Express application
+	// Create the Express application instance
 	const app: Application = express();
+	// Initialize the main router for API routes
+	const mainRouter = createMainRouter();
+	// Determine if the environment is production
+	const isProduction = config.get('env') === 'production';
+	// Create the 404 Not Found handler
+	const notFoundHandler = createNotFoundHandler({ isProduction, logger });
+	//Create the global error handler
+	const errorHandler = createErrorHandler({ isProduction, logger });
 
 	// Application settings
 	Object.entries(expressSettings).forEach(([key, value]) => {
@@ -33,10 +45,10 @@ export const createApp = () => {
 
 	// General rate limiting
 	const limiter = rateLimit({
-		windowMs: 15 * 60 * 1000,
-		max: 10,
-		standardHeaders: 'draft-8',
-		legacyHeaders: false,
+		windowMs: 15 * 60 * 1000, // 15 minute window
+		max: 10, // Limit each IP to 10 requests per window
+		standardHeaders: 'draft-8', // Use standardized rate limit headers
+		legacyHeaders: false, // Disable legacy rate limit headers
 	});
 	app.use(limiter);
 
@@ -44,24 +56,21 @@ export const createApp = () => {
 	app.use(express.json(expressMiddleware.json));
 	app.use(express.urlencoded(expressMiddleware.urlencoded));
 
-	// Logging
+	// Logging middleware: Log HTTP requests
 	app.use(httpLogger);
 
-	// Health check
-	app.get('/health', (_req, res) => {
-		res.status(200).json({ status: 'UP' });
-	});
+	// Redirect middleware: Handle global redirects to non-API prefixed routes
+	app.use(globalRedirect);
 
-	// Routes
-	app.get('/', (_req, res) => {
-		res.send('Hello World');
-	});
+	// API routes: Mount the main router under the `api` path
+	app.use('/api', mainRouter);
 
-	// 404 middleware
+	// 404 middleware: Handle requests to unknown routes
 	app.use(notFoundHandler);
 
-	// Error handling
+	// Error handling middleware: Handle all errors globally
 	app.use(errorHandler);
 
+	// Return the configured Express application instance
 	return app;
 };
