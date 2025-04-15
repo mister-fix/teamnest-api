@@ -1,13 +1,13 @@
 /**
  * ESLint main configuration file. For a detailed explanation regarding ESLint,
  * visit: https://eslint.org/docs/latest/.
- *
  * @format
  */
 
 import js from '@eslint/js';
 import configPrettier from 'eslint-config-prettier';
 import pluginImport from 'eslint-plugin-import';
+import jsdoc from 'eslint-plugin-jsdoc';
 import pluginNode from 'eslint-plugin-n';
 import pluginPrettier from 'eslint-plugin-prettier/recommended';
 import pluginPromise from 'eslint-plugin-promise';
@@ -17,6 +17,8 @@ import unusedImports from 'eslint-plugin-unused-imports';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
+
+/** @format */
 
 // Shared settings for all file types
 const sharedSettings = {
@@ -218,6 +220,20 @@ export default defineConfig([
 		},
 	},
 
+	// JSDoc configurations
+	{
+		files: ['**/*.js', '**/*.ts'],
+		plugins: {
+			jsdoc,
+		},
+		settings: {
+			definedTags: ['format'],
+		},
+		rules: {
+			'jsdoc/require-description': 'warn',
+		},
+	},
+
 	// Ignore unnecessary folders
 	{
 		ignores: [
@@ -238,4 +254,5 @@ export default defineConfig([
 	pluginImport.flatConfigs.recommended,
 	pluginPrettier,
 	configPrettier,
+	jsdoc.configs['flat/recommended'],
 ]);
