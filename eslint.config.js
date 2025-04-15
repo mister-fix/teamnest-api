@@ -226,11 +226,10 @@ export default defineConfig([
 		plugins: {
 			jsdoc,
 		},
-		settings: {
-			definedTags: ['format'],
-		},
+		settings: {},
 		rules: {
 			'jsdoc/require-description': 'warn',
+			'jsdoc/check-tag-names': ['error', { definedTags: ['format'] }],
 		},
 	},
 
