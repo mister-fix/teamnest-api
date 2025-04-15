@@ -1,44 +1,62 @@
 /** @format */
 
-import config from 'config';
+// Import modules
 import { Request, Response } from 'express';
-
-import { logger } from '@/src/utils/logger';
 
 interface CustomError extends Error {
 	status?: number;
 	stack?: string;
 }
 
-export const errorHandler = (
+type ErrorHandlerDeps = {
+	isProduction: boolean;
+	logger: {
+		error: (...args: any[]) => void;
+	};
+};
+
+type ErrorHandler = (
 	err: CustomError | Error,
 	_req: Request,
 	res: Response
-): void => {
-	// Ensure the error is an instance of Error
-	if (!(err instanceof Error)) {
-		err = new Error('An unexpected error occurred');
-	}
+) => void;
 
-	// Determine the status code
-	const statusCode = (err as CustomError)?.status || 500;
+/**
+ * This middleware handles errors that occur during the request lifecycle.
+ * @param err - The error object
+ * @param _req - The request object
+ * @param res - The response object
+ * @returns {void}
+ */
+export const createErrorHandler = ({
+	isProduction,
+	logger,
+}: ErrorHandlerDeps): ErrorHandler => {
+	return (err: CustomError | Error, _req: Request, res: Response): void => {
+		// Ensure the error is an instance of Error
+		if (!(err instanceof Error)) {
+			err = new Error('An unexpected error occurred');
+		}
 
-	// Prepare the error response
-	const isProduction = config.get('env') === 'production';
-	const errorResponse = {
-		message: err.message || 'Internal Server Error',
-		statusCode,
-		...(isProduction ? {} : { stack: err.stack }),
-		timestamp: new Date().toISOString(),
+		// Determine the status code
+		const statusCode = (err as CustomError)?.status || 500;
+
+		// Prepare the error response
+		const errorResponse = {
+			message: err.message || 'Internal Server Error',
+			statusCode,
+			...(isProduction ? {} : { stack: err.stack }),
+			timestamp: new Date().toISOString(),
+		};
+
+		//Log the error
+		logger.error('Error:', err.message);
+
+		if (!isProduction) {
+			logger.error('Stack:', err.stack);
+		}
+
+		// Send the error response
+		res.status(statusCode).json(errorResponse);
 	};
-
-	// Log the error
-	logger.error('Error:', err.message);
-
-	if (!isProduction) {
-		logger.error('Stack:', err.stack);
-	}
-
-	// Send the error response
-	res.status(statusCode).json(errorResponse);
 };
