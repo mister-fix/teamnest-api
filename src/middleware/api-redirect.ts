@@ -1,16 +1,20 @@
 /** @format */
 
 // Import modules
-import { RequestHandler } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
 /**
  * This middleware redirects all non-API requests to the API path.
- * @param req - The Express request object.
- * @param res - The Express response object.
- * @param next - The next middleware function.
+ * @param {Request} req - The Express request object.
+ * @param {Response} res - The Express response object.
+ * @param {NextFunction} next - The next middleware function.
  * @returns {void}
  */
-export const globalRedirect: RequestHandler = (req, res, next): void => {
+export const globalRedirect = (
+	req: Request,
+	res: Response,
+	next: NextFunction
+): void => {
 	// Check if the request path does not start with '/api'
 	if (!req.path.startsWith('/api')) {
 		// Extract the query string from the request URL
